@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Sarala&display=swap");
+
+:root {
+	--color-one: #a485f2;
+	--color-two: #38e0c4;
+	--color-one-hov: #8c6eda;
+	--color-two-hov: #20d4b6;
+	--color-white: white;
+	--color-error: red;
+}
+
+body {
+	margin: 20px;
+	font-family: "Sarala", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: var(--color-white);
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.jam-nav {
+	background: var(--color-two);
+	border-radius: 5px;
+	box-shadow: 0 8px 10px rgb(125 147 178 / 20%);
+}
+
+.ms-form {
+	margin-top: 2rem;
+}
+
+.nav-steps {
+	height: fit-content;
+	background: var(--color-white);
+	border-radius: 5px;
+	box-shadow: 0 8px 15px rgb(125 147 178 / 25%);
+}
+
+.nav-steps li {
+	color: #7d93b2;
+	margin: 0.75rem 0;
+	padding: 0.5rem 0.8rem 0.5rem 1.1rem;
+	border-radius: 2px;
+	background: rgb(243, 243, 243);
+	transition: all 300ms ease-out;
+}
+
+.nav-steps .done {
+	color: var(--color-one);
+	background: var(--color-white);
+	border-right: 10px solid var(--color-one);
+	transition: all 300ms ease-out;
+}
+
+.nav-steps .active {
+	color: var(--color-white);
+	font-weight: 600;
+	background: var(--color-two);
+	transition: all 100ms;
+	border: none;
+	/* border-right: 10px solid var(--color-two); */
+	transition: all 300ms ease-out;
+}
+
+.nav-step-title i {
+	width: 1rem;
+	margin-right: 10px;
+}
+
+.step-info {
+	border-bottom: 5px solid var(--color-two);
+}
+
+.step-components {
+	padding: 1rem 1rem 0;
+	background: var(--color-white);
+	border-radius: 5px;
+	box-shadow: 0 8px 15px rgb(125 147 178 / 25%);
+}
+
+.btn {
+	color: var(--color-white);
+	box-shadow: 0 15px 20px rgb(125 147 178 / 30%);
+}
+
+.btn-back {
+	background: var(--color-one);
+}
+
+.btn-back:hover {
+	color: var(--color-white);
+	background: var(--color-one-hov);
+	box-shadow: 0 10px 20px rgb(125 147 178 / 50%);
+}
+
+.btn-next {
+	background: var(--color-two);
+}
+
+.btn-next:hover {
+	color: var(--color-white);
+	background: var(--color-two-hov);
+	box-shadow: 0 10px 20px rgb(125 147 178 / 50%);
+}
+
+.form-control,
+.form-select {
+	box-shadow: none !important;
+}
+
+.error-msg {
+	color: var(--color-error);
+}
+
+.error-msg + input {
+	border: 2px solid var(--color-error);
+}
+
+/* Fade animation */
+.fade-appear {
+	opacity: 0;
+}
+.fade-appear-active {
+	opacity: 1;
+	transition: opacity 1000ms ease-out;
+}
+.fade-exit {
+	opacity: 1;
+}
+.fade-exit-active {
+	opacity: 0;
+	transition: opacity 1000ms ease-out;
+}
+
+@media only screen and (min-width: 1200px) {
+	.ms-form {
+		width: 990px;
+	}
+}

@@ -1,0 +1,15 @@
+// const [steps, setSteps] = useState([
+// 	{ key: "step1", label: "Getting Started", isDone: true, component: <StepOne formField={formField} /> },
+// 	{ key: "step2", label: "Category", isDone: false, component: <StepTwo formField={formField} /> },
+// 	{ key: "step3", label: "Expertise", isDone: false, component: <StepThree formField={formField} /> },
+// 	{ key: "step4", label: "Expertise Level", isDone: false, component: <StepFour formField={formField} /> },
+// 	{ key: "step5", label: "Education", isDone: true, component: <StepFive formField={formField} /> },
+// 	{ key: "step6", label: "Employment", isDone: false, component: <StepSix formField={formField} /> },
+// 	{ key: "step7", label: "Languages", isDone: false, component: <StepSeven formField={formField} /> },
+// 	{ key: "step8", label: "Hourly Rate", isDone: false, component: <StepEight formField={formField} /> },
+// 	{ key: "step9", label: "Title & Overview", isDone: true, component: <StepNine formField={formField} /> },
+// 	{ key: "step10", label: "Profile Photo", isDone: false, component: <StepTen formField={formField} /> },
+// 	{ key: "step11", label: "Location", isDone: false, component: <StepEleven formField={formField} /> },
+// 	{ key: "step12", label: "Phone", isDone: false, component: <StepTwelve formField={formField} /> },
+// 	{ key: "step13", label: "Review Details", isDone: false, component: <ReviewDetails /> },
+// ]);
