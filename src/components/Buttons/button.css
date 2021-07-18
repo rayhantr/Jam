@@ -1,0 +1,81 @@
+@import "../../index.css";
+
+.btn {
+	text-transform: uppercase;
+	border: 2px solid;
+	transition: color 0.1s cubic-bezier(0.16, 0.08, 0.355, 1), background 0.1s cubic-bezier(0.16, 0.08, 0.355, 1), background-color 300ms ease-out;
+}
+
+.btn:hover,
+.btn-next-go {
+	color: var(--color-white);
+	box-shadow: 0 10px 15px rgb(125 147 178 / 20%);
+}
+
+.btn span {
+	display: inline-block;
+	position: relative;
+	transition: all 300ms ease-out;
+}
+
+.btn i {
+	position: absolute;
+	opacity: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	transition: all 300ms ease-out;
+}
+
+.btn:hover i,
+.btn-next-go i {
+	opacity: 1;
+}
+
+.btn-next {
+	color: var(--color-two);
+	border-color: var(--color-two);
+}
+
+.btn-next-go {
+	border-color: var(--color-two);
+}
+
+.btn-back {
+	color: var(--color-one);
+	border-color: var(--color-one);
+}
+
+.btn-next:hover,
+.btn-next-go {
+	background: var(--color-two);
+}
+
+.btn-back:hover {
+	background: var(--color-one);
+}
+
+.btn-next:hover span,
+.btn-next-go span {
+	transform: translate3d(-0.8rem, 0, 0);
+}
+
+.btn-back:hover span {
+	transform: translate3d(0.8rem, 0, 0);
+}
+
+.btn-next i {
+	right: 0;
+}
+
+.btn-back i {
+	left: 0;
+}
+
+.btn-next:hover i,
+.btn-next-go i {
+	right: -1.6rem;
+}
+
+.btn-back:hover i {
+	left: -1.6rem;
+}

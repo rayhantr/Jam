@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Formik, Form } from "formik";
 import { CSSTransition } from "react-transition-group";
+import { Container, Row, Col, Button } from "react-bootstrap";
+import "../Buttons/button.css";
 
 import { StepOne, StepTwo, StepThree, StepFour, StepFive, StepSix, StepSeven, StepEight, StepNine, StepTen, StepEleven, StepTwelve } from "./Forms";
 
@@ -106,16 +108,16 @@ const FinalForm = () => {
 	}
 
 	return (
-		<div className="container ms-form">
+		<Container className="ms-form">
 			{activeStep === steps.length ? (
 				<RegistrationSuccess />
 			) : (
-				<div className="row">
+				<Row>
 					{/* Step navigation */}
 					<ul className="nav-steps list-unstyled col-4 d-none d-md-block">
 						{steps.map((step, i) => {
 							return (
-								<li key={i} className={`${activeStep + 1 === step.key ? "active" : ""} ${step.isDone ? "done" : ""}`}>
+								<li key={i} className={`${activeStep + 1 === step.key ? "active" : ""} ${step.isDone ? "done" : ""} text-gray-light`}>
 									<div className="nav-step-title">
 										{step.icon} <span>{step.label}</span>
 									</div>
@@ -125,47 +127,61 @@ const FinalForm = () => {
 					</ul>
 
 					{/* Step components */}
-					<CSSTransition in={true} appear={true} timeout={1000} classNames="fade" unmountOnExit>
-						<div className="col-12 col-md-8">
+					<CSSTransition in={true} appear={true} timeout={500} classNames="fade" unmountOnExit>
+						<Col md={8}>
 							<Formik initialValues={formInitialValues} validationSchema={currentValidationSchema} onSubmit={_handleSubmit}>
-								{({ isSubmitting }) => (
+								{({ isSubmitting, isValid, dirty }) => (
 									<Form id={formId}>
-										<div className="step-components row ms-md-1">
-											<div className="col-12 step-info">
-												<h1>{steps[activeStep].label}</h1>
+										<Row className="step-components ms-md-1">
+											{/* Step Heading */}
+											<Col xs={12} className="step-info p-3">
+												<h1 className="text-gray-dark">
+													{console.log(dirty)}
+													{console.log(isValid)}
+													{steps[activeStep].label}
+													{steps[activeStep].icon}
+												</h1>
 												{/* Step counter */}
-												<h5>
-													Step {activeStep + 1} of {steps.length}{" "}
+												<h5 className="text-gray-light">
+													Step {activeStep + 1} of {steps.length}
 												</h5>
-											</div>
-											<div className="col-12">
-												<div className="row my-3">{_renderStepContent(activeStep)}</div>
-											</div>
-											<div className="col-12 my-4">
+											</Col>
+											{/* Components Render */}
+											<Col xs={12} className="my-3">
+												{_renderStepContent(activeStep)}
+											</Col>
+											{/* Back & Next Button */}
+											<Col xs={12} className="my-4">
 												<div className={`nav-buttons row ${activeStep === 0 ? "justify-content-end" : "justify-content-between"}`}>
 													{activeStep !== 0 && (
-														<div className="col-6 col-sm-3">
-															<button type="button" className="col-12 btn btn-back" onClick={_handleBack}>
-																Back
-															</button>
-														</div>
+														<Col xs={6} lg={3}>
+															<Button type="button" variant="back" className="col-12" onClick={_handleBack}>
+																<span>
+																	Back
+																	<i className="fas fa-arrow-left"></i>
+																</span>
+															</Button>
+														</Col>
 													)}
-													<div className="col-6 col-sm-3">
-														<button type="submit" className="col-12 btn btn-next" disabled={isSubmitting}>
-															{isLastStep ? "Submit" : "Next"}
-														</button>
-													</div>
+													<Col xs={6} lg={3}>
+														<Button type="submit" variant={`${!(isValid && dirty) ? "next" : "next-go"}`} className="col-12" disabled={!(isValid && dirty)}>
+															<span>
+																{isLastStep ? "Submit" : "Next"}
+																<i className="fas fa-arrow-right"></i>
+															</span>
+														</Button>
+													</Col>
 												</div>
-											</div>
-										</div>
+											</Col>
+										</Row>
 									</Form>
 								)}
 							</Formik>
-						</div>
+						</Col>
 					</CSSTransition>
-				</div>
+				</Row>
 			)}
-		</div>
+		</Container>
 	);
 };
 

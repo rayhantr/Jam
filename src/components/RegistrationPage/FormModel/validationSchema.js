@@ -76,7 +76,7 @@ export default [
 		[city.name]: Yup.string().nullable().required(`${city.requiredErrorMsg}`),
 		[zipCode.name]: Yup.string()
 			.required(`${zipCode.requiredErrorMsg}`)
-			.test("len", `${zipCode.invalidErrorMsg}`, (val) => val && val.length === 4),
+			.test("len", `${zipCode.invalidErrorMsg}`, (val) => val && val.length > 3),
 		[country.name]: Yup.string().nullable().required(`${country.requiredErrorMsg}`),
 	}),
 	// Step 12

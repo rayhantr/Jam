@@ -1,15 +1,16 @@
 import React from "react";
 import { useField } from "formik";
+import { Form } from "react-bootstrap";
 
 const InputField = ({ label, ...props }) => {
 	const [field, meta] = useField(props);
 	return (
-		<div className="col-12 form-group my-3">
-			<label className="form-label form-control-placeholder" htmlFor={props.id || props.name}>
-				{label}
-			</label>
-			<input className="form-control input-field" {...field} {...props} style={meta.touched && meta.error ? { border: 1 + "px solid red" } : null} />
-			{meta.touched && meta.error ? <small className="error-msg my-1">{meta.error}</small> : null}
+		<div className="mt-3">
+			<Form.Group controlId={props.id || props.name}>
+				<Form.Label>{label}</Form.Label>
+				<Form.Control type="text" name={props.id || props.name} {...field} {...props} isInvalid={meta.touched && meta.error} isValid={meta.touched && !meta.error} />
+				<Form.Control.Feedback type="invalid">{meta.error}</Form.Control.Feedback>
+			</Form.Group>
 		</div>
 	);
 };
