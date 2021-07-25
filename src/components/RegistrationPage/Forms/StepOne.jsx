@@ -8,9 +8,9 @@ const StepOne = (props) => {
 
 	return (
 		<>
-			<InputField label={firstName.label} name={firstName.name} type="text" placeholder="Jane" />
+			<InputField label={firstName.label} name={firstName.name} type="text" placeholder="John" />
 			<InputField label={lastName.label} name={lastName.name} type="text" placeholder="Doe" />
-			<InputField label={email.label} name={email.name} type="email" placeholder="jane@formik.com" />
+			<InputField label={email.label} name={email.name} type="email" placeholder="example@email.com" />
 		</>
 	);
 };

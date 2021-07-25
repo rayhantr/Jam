@@ -2,13 +2,13 @@ import React from "react";
 import FinalForm from "./components/RegistrationPage/FinalForm";
 import Header from "./components/Header/Header";
 
-function App() {
+function MultiStepForm() {
 	return (
-		<div className="App">
+		<div className="step-form">
 			<Header />
 			<FinalForm />
 		</div>
 	);
 }
 
-export default App;
+export default MultiStepForm;

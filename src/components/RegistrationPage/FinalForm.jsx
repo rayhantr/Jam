@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Formik, Form } from "formik";
 import { CSSTransition } from "react-transition-group";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col, Button, Badge } from "react-bootstrap";
 import "../Buttons/button.css";
 
 import { StepOne, StepTwo, StepThree, StepFour, StepFive, StepSix, StepSeven, StepEight, StepNine, StepTen, StepEleven, StepTwelve } from "./Forms";
@@ -114,36 +114,44 @@ const FinalForm = () => {
 			) : (
 				<Row>
 					{/* Step navigation */}
-					<ul className="nav-steps list-unstyled col-4 d-none d-md-block">
+					<Col as="ul" xs={4} className={`nav-steps list-unstyled d-none  ${isLastStep ? "d-none" : "d-md-block"}`}>
 						{steps.map((step, i) => {
 							return (
-								<li key={i} className={`${activeStep + 1 === step.key ? "active" : ""} ${step.isDone ? "done" : ""} text-gray-light`}>
-									<div className="nav-step-title">
+								<li key={i} className={`${activeStep + 1 === step.key ? "active" : ""} ${step.isDone ? "done" : ""} ${i === 12 ? "d-none" : "d-block"} text-gray-light`}>
+									{/* <div className="nav-step-title">
 										{step.icon} <span>{step.label}</span>
-									</div>
+									</div> */}
+									<Row className="nav-step-title gx-2">
+										<Col xs="auto">
+											<div className="step-icon p-2 text-center">{step.icon}</div>
+										</Col>
+										<Col>
+											<div className="step-label p-2">{step.label}</div>
+										</Col>
+									</Row>
 								</li>
 							);
 						})}
-					</ul>
+					</Col>
 
 					{/* Step components */}
 					<CSSTransition in={true} appear={true} timeout={500} classNames="fade" unmountOnExit>
-						<Col md={8}>
+						<Col md={`${isLastStep ? 12 : 8}`}>
 							<Formik initialValues={formInitialValues} validationSchema={currentValidationSchema} onSubmit={_handleSubmit}>
 								{({ isSubmitting, isValid, dirty }) => (
 									<Form id={formId}>
-										<Row className="step-components ms-md-1">
+										<Row className="step-components ms-md-1 g-0">
 											{/* Step Heading */}
 											<Col xs={12} className="step-info p-3">
 												<h1 className="text-gray-dark">
-													{console.log(dirty)}
-													{console.log(isValid)}
 													{steps[activeStep].label}
 													{steps[activeStep].icon}
 												</h1>
 												{/* Step counter */}
-												<h5 className="text-gray-light">
-													Step {activeStep + 1} of {steps.length}
+												<h5>
+													<Badge bg="color-two">
+														Step {activeStep + 1} of {steps.length - 1}
+													</Badge>
 												</h5>
 											</Col>
 											{/* Components Render */}
@@ -164,7 +172,7 @@ const FinalForm = () => {
 														</Col>
 													)}
 													<Col xs={6} lg={3}>
-														<Button type="submit" variant={`${!(isValid && dirty) ? "next" : "next-go"}`} className="col-12" disabled={!(isValid && dirty)}>
+														<Button type="submit" variant={`${!(isValid && dirty) ? "next" : "next-go"}`} className="col-12" disabled={!(isValid && dirty) || isSubmitting}>
 															<span>
 																{isLastStep ? "Submit" : "Next"}
 																<i className="fas fa-arrow-right"></i>

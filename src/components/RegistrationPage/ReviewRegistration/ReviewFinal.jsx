@@ -1,5 +1,7 @@
 import React from "react";
 import Card from "../../Cards/Card";
+import { Card as RCard, Col } from "react-bootstrap";
+import "../../Cards/cards.css";
 
 const DivField = ({ comp }) => {
 	return <div className="row">{comp}</div>;
@@ -10,18 +12,20 @@ const StepOneDetails = (props) => {
 	const { firstName, lastName, email } = formValues;
 
 	return (
-		<div>
-			<Card
-				title="Step One"
-				content={
-					<>
-						<DivField comp={`First Name: ${firstName}`} />
-						<DivField comp={`Last Name: ${lastName}`} />
-						<DivField comp={`Email: ${email}`} />
-					</>
-				}
-			/>
-		</div>
+		<RCard>
+			<RCard.Header as="h4" className="row g-0 justify-content-between">
+				Step One
+				<Col xs={1} className="text-center">
+					<i className="fas fa-pen"></i>
+				</Col>
+			</RCard.Header>
+
+			<RCard.Body className="bs-dim">
+				<RCard.Text>First Name: {`${firstName}`}</RCard.Text>
+				<RCard.Text>Last Name: {`${lastName}`}</RCard.Text>
+				<RCard.Text>Email: {`${email}`}</RCard.Text>
+			</RCard.Body>
+		</RCard>
 	);
 };
 

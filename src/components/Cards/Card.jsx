@@ -12,7 +12,7 @@ const Card = (props) => {
 					</div>
 					<div className="col-1 p-1 text-center">
 						<a href="#">
-							<i class="fas fa-pen"></i>
+							<i className="fas fa-pen"></i>
 						</a>
 					</div>
 				</div>
