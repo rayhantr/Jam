@@ -1,6 +1,6 @@
 import React from "react";
-import FinalForm from "./components/RegistrationPage/FinalForm";
-import Header from "./components/Header/Header";
+import FinalForm from "../components/RegistrationPage/FinalForm";
+import Header from "../components/Header/Header";
 
 function MultiStepForm() {
 	return (

@@ -1,31 +1,25 @@
 import React from "react";
-import Card from "../../Cards/Card";
-import { Card as RCard, Col } from "react-bootstrap";
-import "../../Cards/cards.css";
-
-const DivField = ({ comp }) => {
-	return <div className="row">{comp}</div>;
-};
+import { Card, Col } from "react-bootstrap";
 
 const StepOneDetails = (props) => {
 	const { formValues } = props;
 	const { firstName, lastName, email } = formValues;
 
 	return (
-		<RCard>
-			<RCard.Header as="h4" className="row g-0 justify-content-between">
+		<Card>
+			<Card.Header as="h4" className="row g-0 justify-content-between">
 				Step One
 				<Col xs={1} className="text-center">
 					<i className="fas fa-pen"></i>
 				</Col>
-			</RCard.Header>
+			</Card.Header>
 
-			<RCard.Body className="bs-dim">
-				<RCard.Text>First Name: {`${firstName}`}</RCard.Text>
-				<RCard.Text>Last Name: {`${lastName}`}</RCard.Text>
-				<RCard.Text>Email: {`${email}`}</RCard.Text>
-			</RCard.Body>
-		</RCard>
+			<Card.Body className="bs-dim">
+				<Card.Text>First Name: {`${firstName}`}</Card.Text>
+				<Card.Text>Last Name: {`${lastName}`}</Card.Text>
+				<Card.Text>Email: {`${email}`}</Card.Text>
+			</Card.Body>
+		</Card>
 	);
 };
 
@@ -34,17 +28,19 @@ const StepTwoDetails = (props) => {
 	const { catService1, catService2 } = formValues;
 
 	return (
-		<div>
-			<Card
-				title="Step Two"
-				content={
-					<>
-						<DivField comp={`Category 1: ${catService1}`} />
-						<DivField comp={`Category 2: ${catService2}`} />
-					</>
-				}
-			/>
-		</div>
+		<Card>
+			<Card.Header as="h4" className="row g-0 justify-content-between">
+				Step Two
+				<Col xs={1} className="text-center">
+					<i className="fas fa-pen"></i>
+				</Col>
+			</Card.Header>
+
+			<Card.Body className="bs-dim">
+				<Card.Text>Category 1: {`${catService1}`}</Card.Text>
+				<Card.Text>Category 2: {`${catService2}`}</Card.Text>
+			</Card.Body>
+		</Card>
 	);
 };
 
@@ -53,16 +49,18 @@ const StepThreeDetails = (props) => {
 	const { expertise } = formValues;
 
 	return (
-		<div>
-			<Card
-				title="Step Three"
-				content={
-					<>
-						<DivField comp={`Expertise: ${expertise}`} />
-					</>
-				}
-			/>
-		</div>
+		<Card>
+			<Card.Header as="h4" className="row g-0 justify-content-between">
+				Step Three
+				<Col xs={1} className="text-center">
+					<i className="fas fa-pen"></i>
+				</Col>
+			</Card.Header>
+
+			<Card.Body className="bs-dim">
+				<Card.Text>Expertise: {`${expertise}`}</Card.Text>
+			</Card.Body>
+		</Card>
 	);
 };
 
@@ -71,16 +69,18 @@ const StepFourDetails = (props) => {
 	const { expertiseLvl } = formValues;
 
 	return (
-		<div>
-			<Card
-				title="Step Four"
-				content={
-					<>
-						<DivField comp={`Expertise Level: ${expertiseLvl}`} />
-					</>
-				}
-			/>
-		</div>
+		<Card>
+			<Card.Header as="h4" className="row g-0 justify-content-between">
+				Step Four
+				<Col xs={1} className="text-center">
+					<i className="fas fa-pen"></i>
+				</Col>
+			</Card.Header>
+
+			<Card.Body className="bs-dim">
+				<Card.Text>Expertise Level: {`${expertiseLvl}`}</Card.Text>
+			</Card.Body>
+		</Card>
 	);
 };
 
@@ -89,16 +89,18 @@ const StepFiveDetails = (props) => {
 	const { education } = formValues;
 
 	return (
-		<div>
-			<Card
-				title="Step Five"
-				content={
-					<>
-						<DivField comp={`Education: ${education}`} />
-					</>
-				}
-			/>
-		</div>
+		<Card>
+			<Card.Header as="h4" className="row g-0 justify-content-between">
+				Step Five
+				<Col xs={1} className="text-center">
+					<i className="fas fa-pen"></i>
+				</Col>
+			</Card.Header>
+
+			<Card.Body className="bs-dim">
+				<Card.Text>Education: {`${education}`}</Card.Text>
+			</Card.Body>
+		</Card>
 	);
 };
 
@@ -107,16 +109,18 @@ const StepSixDetails = (props) => {
 	const { education } = formValues;
 
 	return (
-		<div>
-			<Card
-				title="Step Six"
-				content={
-					<>
-						<DivField comp={`Education: ${education}`} />
-					</>
-				}
-			/>
-		</div>
+		<Card>
+			<Card.Header as="h4" className="row g-0 justify-content-between">
+				Step Six
+				<Col xs={1} className="text-center">
+					<i className="fas fa-pen"></i>
+				</Col>
+			</Card.Header>
+
+			<Card.Body className="bs-dim">
+				<Card.Text>Education: {`${education}`}</Card.Text>
+			</Card.Body>
+		</Card>
 	);
 };
 
@@ -125,17 +129,19 @@ const StepSevenDetails = (props) => {
 	const { languageProf, languages } = formValues;
 
 	return (
-		<div>
-			<Card
-				title="Step Seven"
-				content={
-					<>
-						<DivField comp={`English Language Proficiency: ${languageProf}`} />
-						<DivField comp={`Other Languages: ${languages}`} />
-					</>
-				}
-			/>
-		</div>
+		<Card>
+			<Card.Header as="h4" className="row g-0 justify-content-between">
+				Step Seven
+				<Col xs={1} className="text-center">
+					<i className="fas fa-pen"></i>
+				</Col>
+			</Card.Header>
+
+			<Card.Body className="bs-dim">
+				<Card.Text>English Language Proficiency: {`${languageProf}`}</Card.Text>
+				<Card.Text>Other Languages: {`${languages}`}</Card.Text>
+			</Card.Body>
+		</Card>
 	);
 };
 
@@ -144,16 +150,18 @@ const StepEightDetails = (props) => {
 	const { hourlyRate } = formValues;
 
 	return (
-		<div>
-			<Card
-				title="Step Eight"
-				content={
-					<>
-						<DivField comp={`Hourly Rate: ${hourlyRate}`} />
-					</>
-				}
-			/>
-		</div>
+		<Card>
+			<Card.Header as="h4" className="row g-0 justify-content-between">
+				Step Eight
+				<Col xs={1} className="text-center">
+					<i className="fas fa-pen"></i>
+				</Col>
+			</Card.Header>
+
+			<Card.Body className="bs-dim">
+				<Card.Text>Hourly Rate: {`${hourlyRate}`}</Card.Text>
+			</Card.Body>
+		</Card>
 	);
 };
 
@@ -162,17 +170,19 @@ const StepNineDetails = (props) => {
 	const { title, overview } = formValues;
 
 	return (
-		<div>
-			<Card
-				title="Step Nine"
-				content={
-					<>
-						<DivField comp={`Title: ${title}`} />
-						<DivField comp={`Overview: ${overview}`} />
-					</>
-				}
-			/>
-		</div>
+		<Card>
+			<Card.Header as="h4" className="row g-0 justify-content-between">
+				Step Nine
+				<Col xs={1} className="text-center">
+					<i className="fas fa-pen"></i>
+				</Col>
+			</Card.Header>
+
+			<Card.Body className="bs-dim">
+				<Card.Text>Title: {`${title}`}</Card.Text>
+				<Card.Text>Overview: {`${overview}`}</Card.Text>
+			</Card.Body>
+		</Card>
 	);
 };
 
@@ -181,16 +191,18 @@ const StepTenDetails = (props) => {
 	const { education } = formValues;
 
 	return (
-		<div>
-			<Card
-				title="Step Ten"
-				content={
-					<>
-						<DivField comp={`Education: ${education}`} />
-					</>
-				}
-			/>
-		</div>
+		<Card>
+			<Card.Header as="h4" className="row g-0 justify-content-between">
+				Step Ten
+				<Col xs={1} className="text-center">
+					<i className="fas fa-pen"></i>
+				</Col>
+			</Card.Header>
+
+			<Card.Body className="bs-dim">
+				<Card.Text>Education: {`${education}`}</Card.Text>
+			</Card.Body>
+		</Card>
 	);
 };
 
@@ -199,19 +211,21 @@ const StepElevenDetails = (props) => {
 	const { address, city, zipCode, country } = formValues;
 
 	return (
-		<div>
-			<Card
-				title="Step Eleven"
-				content={
-					<>
-						<DivField comp={`Address: ${address}`} />
-						<DivField comp={`City: ${city}`} />
-						<DivField comp={`ZipCode: ${zipCode}`} />
-						<DivField comp={`Country: ${country}`} />
-					</>
-				}
-			/>
-		</div>
+		<Card>
+			<Card.Header as="h4" className="row g-0 justify-content-between">
+				Step Eleven
+				<Col xs={1} className="text-center">
+					<i className="fas fa-pen"></i>
+				</Col>
+			</Card.Header>
+
+			<Card.Body className="bs-dim">
+				<Card.Text>Address: {`${address}`}</Card.Text>
+				<Card.Text>City: {`${city}`}</Card.Text>
+				<Card.Text>ZipCode: {`${zipCode}`}</Card.Text>
+				<Card.Text>Country: {`${country}`}</Card.Text>
+			</Card.Body>
+		</Card>
 	);
 };
 
@@ -220,16 +234,18 @@ const StepTwelveDetails = (props) => {
 	const { contactNo } = formValues;
 
 	return (
-		<div>
-			<Card
-				title="Step Twelve"
-				content={
-					<>
-						<DivField comp={`Contact No: ${contactNo}`} />
-					</>
-				}
-			/>
-		</div>
+		<Card>
+			<Card.Header as="h4" className="row g-0 justify-content-between">
+				Step Twelve
+				<Col xs={1} className="text-center">
+					<i className="fas fa-pen"></i>
+				</Col>
+			</Card.Header>
+
+			<Card.Body className="bs-dim">
+				<Card.Text>Contact No: {`${contactNo}`}</Card.Text>
+			</Card.Body>
+		</Card>
 	);
 };
 
