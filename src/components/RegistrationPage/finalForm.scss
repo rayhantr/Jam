@@ -15,7 +15,7 @@
 	}
 
 	.step-icon {
-		background-color: var(--color-body);
+		background-color: $color-body;
 		border-radius: 5px;
 		transition: all 0.3s ease;
 
@@ -26,8 +26,8 @@
 
 	.step-label {
 		border-radius: 5px;
-		background: linear-gradient(to left, var(--color-body) 50%, $color-two 50%);
-		background-size: 200%;
+		background: linear-gradient(to left, $color-body 50%, $color-two 50%);
+		background-size: 201%;
 		background-position: right bottom;
 		transition: all 0.3s ease;
 	}

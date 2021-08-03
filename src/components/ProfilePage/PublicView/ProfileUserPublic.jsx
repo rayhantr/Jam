@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Container, Row, Col, Card, Button, Badge } from "react-bootstrap";
 import Avatar from "react-avatar";
 
-import BtnIcon from "../Buttons/BtnIcon";
-import EmptyAdd from "./EmptyAdd";
-import ModalEdit from "../Modal/ModalEdit";
+import BtnIcon from "../../Buttons/BtnIcon";
+import EmptyAdd from "../EmptyAdd";
+import ModalEdit from "../../Modal/ModalEdit";
 
 const ProfileP1 = () => {
 	return (
@@ -257,7 +257,7 @@ const OtherExp = () => {
 	);
 };
 
-const ProfileUser = () => {
+const ProfileUserPublic = () => {
 	return (
 		<Container className="mt-2 mt-md-5">
 			<Row>
@@ -273,4 +273,4 @@ const ProfileUser = () => {
 	);
 };
 
-export default ProfileUser;
+export default ProfileUserPublic;
