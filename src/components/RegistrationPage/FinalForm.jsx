@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Formik, Form } from "formik";
 import { Container, Row, Col, Button, Badge } from "react-bootstrap";
-import "../Buttons/button.css";
+import "../Buttons/button.scss";
+import "./finalForm.scss";
 
 import { StepOne, StepTwo, StepThree, StepFour, StepFive, StepSix, StepSeven, StepEight, StepNine, StepTen, StepEleven, StepTwelve } from "./Forms";
 
@@ -159,7 +160,7 @@ const FinalForm = () => {
 											<div className={`nav-buttons row ${activeStep === 0 ? "justify-content-end" : "justify-content-between"}`}>
 												{activeStep !== 0 && (
 													<Col xs={6} lg={3}>
-														<Button type="button" variant="back" className="col-12" onClick={_handleBack}>
+														<Button type="button" variant="back" className="btn-form col-12" onClick={_handleBack}>
 															<span>
 																Back
 																<i className="fas fa-arrow-left"></i>
@@ -168,7 +169,7 @@ const FinalForm = () => {
 													</Col>
 												)}
 												<Col xs={6} lg={3}>
-													<Button type="submit" variant={`${!(isValid && dirty) ? "next" : "next-go"}`} className="col-12" disabled={!(isValid && dirty) || isSubmitting}>
+													<Button type="submit" variant={`${!(isValid && dirty) ? "next" : "next-go"}`} className="btn-form col-12" disabled={!(isValid && dirty) || isSubmitting}>
 														<span>
 															{isLastStep ? "Submit" : reviewStep ? "Review" : "Next"}
 															<i className="fas fa-arrow-right"></i>

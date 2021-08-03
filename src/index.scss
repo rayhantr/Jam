@@ -1,0 +1,77 @@
+@import "./cssVariables.scss";
+
+:root {
+	--color-body: #fafbfe;
+	--color-one: #2d6478;
+	--color-two: #00cad9;
+	--color-one-hov: #8c6eda;
+	--color-two-hov: #20d4b6;
+	--color-white: white;
+	--color-error: red;
+}
+
+body {
+	font-family: "Sarala", sans-serif;
+	font-size: 14px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: $color-body;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.text-gray-dark {
+	color: #3f4254;
+}
+
+.text-gray-light {
+	color: #7d93b2;
+}
+
+.bs-dim {
+	box-shadow: 0 0 35px 0 rgba(154, 161, 171, 0.15);
+}
+
+.bg-color-two {
+	background-color: $color-one;
+}
+
+.jam-nav {
+	background: $color-two;
+	box-shadow: 0 8px 10px rgba(125, 147, 178, 0.2);
+}
+
+.empty-add {
+	cursor: pointer;
+	width: 100%;
+	border: 2px dashed $color-two;
+	border-radius: 5px;
+	padding: 3rem;
+	transition: all 0.3s ease;
+
+	i {
+		color: $color-two;
+		font-size: 5rem;
+	}
+
+	button {
+		color: $color-two;
+		background-color: transparent;
+		transition: all 0.3s ease;
+	}
+
+	h6 {
+		color: $color-one;
+	}
+
+	&:hover {
+		background-color: rgba($color: $color-two, $alpha: 0.08);
+
+		button {
+			color: $color-white;
+			background-color: $color-two;
+		}
+	}
+}

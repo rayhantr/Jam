@@ -1,0 +1,49 @@
+@import "../../cssVariables.scss";
+
+.navbar {
+	background-color: $color-one !important;
+	color: $color-white;
+	img {
+		width: 35px;
+		height: 33px;
+	}
+	.dropdown-toggle::after {
+		visibility: hidden;
+	}
+	.dropdown:hover > .dropdown-menu {
+		display: block;
+	}
+
+	.navbar-search-box {
+		position: relative;
+		::-webkit-input-placeholder {
+			color: white;
+		}
+		:-ms-input-placeholder {
+			color: white;
+		}
+		::-moz-placeholder {
+			color: white;
+		}
+
+		.search-body {
+			border-radius: 45px;
+			background-color: #ffffff21;
+			color: $color-white;
+			opacity: 1;
+			border: 0;
+		}
+
+		.search-field {
+			display: flex;
+			position: absolute;
+			right: 12px;
+
+			.icon {
+				background: transparent;
+				border: 0;
+				color: $color-white;
+			}
+		}
+	}
+}

@@ -1,0 +1,103 @@
+@import "../../cssVariables.scss";
+
+.ms-form {
+	margin-top: 2rem;
+}
+
+.nav-steps {
+	height: fit-content;
+	background: $color-white;
+	border-radius: 5px;
+	box-shadow: 0 0 35px 0 rgba(154, 161, 171, 0.15);
+
+	li {
+		margin: 0.75rem 0;
+	}
+
+	.step-icon {
+		background-color: var(--color-body);
+		border-radius: 5px;
+		transition: all 0.3s ease;
+
+		i {
+			width: 1.25rem;
+		}
+	}
+
+	.step-label {
+		border-radius: 5px;
+		background: linear-gradient(to left, var(--color-body) 50%, $color-two 50%);
+		background-size: 200%;
+		background-position: right bottom;
+		transition: all 0.3s ease;
+	}
+
+	.done {
+		.step-icon {
+			color: $color-white;
+			background: $color-one;
+		}
+	}
+
+	.active {
+		.step-icon {
+			color: $color-white;
+			background: $color-two;
+		}
+		.step-label {
+			color: $color-white;
+			font-weight: 600;
+			background-position: left;
+		}
+	}
+}
+
+.step-components {
+	padding: 1rem 1rem 0;
+	background: $color-white;
+	border-radius: 5px;
+	box-shadow: 0 0 35px 0 rgba(154, 161, 171, 0.15);
+
+	.step-info {
+		position: relative;
+		background-color: rgba(0, 202, 217, 0.3);
+		border-radius: 5px;
+		overflow: hidden;
+
+		i {
+			color: $color-white;
+			font-size: 6rem;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-15%);
+			right: 1rem;
+		}
+	}
+}
+
+.form-control,
+.form-select {
+	box-shadow: none !important;
+}
+
+/* Fade animation */
+.fade-appear {
+	opacity: 0;
+}
+.fade-appear-active {
+	opacity: 1;
+	transition: opacity 1000ms ease-out;
+}
+.fade-exit {
+	opacity: 1;
+}
+.fade-exit-active {
+	opacity: 0;
+	transition: opacity 1000ms ease-out;
+}
+
+@media only screen and (min-width: 1200px) {
+	.ms-form {
+		width: 990px;
+	}
+}

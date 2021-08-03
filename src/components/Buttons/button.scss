@@ -1,0 +1,111 @@
+@import "../../cssVariables.scss";
+
+$primary: #00cad9;
+$secondary: #2d6478;
+$card-border-width: 0px;
+
+@import "bootstrap";
+
+.btn-form {
+	text-transform: uppercase;
+	border: 2px solid;
+	transition: color 0.1s cubic-bezier(0.16, 0.08, 0.355, 1), background 0.1s cubic-bezier(0.16, 0.08, 0.355, 1), background-color 300ms ease-out;
+}
+
+.btn-form:hover,
+.btn-next-go {
+	color: $color-white;
+	box-shadow: 0 10px 15px rgba(125, 147, 178, 0.2);
+}
+
+.btn-form span {
+	display: inline-block;
+	position: relative;
+	transition: all 300ms ease-out;
+}
+
+.btn-form i {
+	position: absolute;
+	opacity: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	transition: all 300ms ease-out;
+}
+
+.btn-form:hover i,
+.btn-next-go i {
+	opacity: 1;
+}
+
+.btn-next {
+	color: $color-two;
+	border-color: $color-two;
+}
+
+.btn-next-go {
+	border-color: $color-two;
+}
+
+.btn-back {
+	color: $color-one;
+	border-color: $color-one;
+}
+
+.btn-next:hover,
+.btn-next-go {
+	background: $color-two;
+}
+
+.btn-back:hover {
+	background: $color-one;
+}
+
+.btn-next:hover span,
+.btn-next-go span {
+	transform: translate3d(-0.8rem, 0, 0);
+}
+
+.btn-back:hover span {
+	transform: translate3d(0.8rem, 0, 0);
+}
+
+.btn-next i {
+	right: 0;
+}
+
+.btn-back i {
+	left: 0;
+}
+
+.btn-next:hover i,
+.btn-next-go i {
+	right: -1.6rem;
+}
+
+.btn-back:hover i {
+	left: -1.6rem;
+}
+
+/* Button Icon */
+.btn-icon {
+	padding: initial;
+	line-height: inherit;
+	height: 30px;
+	width: 30px;
+	font-size: 1rem;
+	color: $color-white;
+	background-color: $color-one;
+	border-color: $color-one;
+	transition: all 0.3s ease;
+}
+
+.btn-icon-delete {
+	background-color: $color-error;
+	border-color: $color-error;
+}
+
+.btn-icon:hover {
+	color: $color-white;
+	box-shadow: 0 2px 5px 0 rgba(154, 161, 171, 0.5);
+	/* transform: translateY(-2px); */
+}
