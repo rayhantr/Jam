@@ -1,0 +1,115 @@
+{
+	"users": [{
+		"id": 1,
+		"userName": "User Name one two three",
+		"profileImg": "",
+		"address": "address, location",
+		"hourlyRate": 15.0,
+		"availableHours": 30,
+		"profileTitle": "Profile Title",
+		"profileOverview": "Profile Overview",
+		"videoIntro": "",
+		"languages": [
+			{ "languageName": "English", "proficiency": "fluent" },
+			{ "languageName": "Bangla", "proficiency": "native" }
+		],
+		"education": [
+			{ "instituteName": "University Name", "degree": "Bachelor of Science", "department": "Computer Science & Engineering", "startDate": "2017", "endDate": "2021" },
+			{ "instituteName": "University Name 2", "degree": "Masters of Science", "department": "Computer Science & Engineering", "startDate": "2021", "endDate": "2022" }
+		],
+		"skills": ["Web development", "UI/UX", "Graphics Design"],
+		"workHistory": { "completedJobList": [
+			{
+				"jobID": 2,
+				"title": "score",
+				"completionDate": "July 1, 2021",
+				"rating": 5.0,
+				"comment": "Nice and Good to work with.",
+				"fee": 50,
+				"feeType": "Fixed"
+			},
+			{
+				"jobID": 4,
+				"title": "score",
+				"completionDate": "July 1, 2021",
+				"rating": 5.0,
+				"comment": "Nice and Good to work with.",
+				"fee": 50,
+				"feeType": "Fixed"
+			},
+			{
+				"jobID": 5,
+				"title": "score",
+				"completionDate": "July 1, 2021",
+				"rating": 5.0,
+				"comment": "Nice and Good to work with.",
+				"fee": 50,
+				"feeType": "Fixed"
+			},
+			{
+				"jobID": 6,
+				"title": "score",
+				"completionDate": "July 1, 2021",
+				"rating": 5.0,
+				"comment": "Nice and Good to work with.",
+				"fee": 50,
+				"feeType": "Fixed"
+			},
+			{
+				"jobID": 7,
+				"title": "score",
+				"completionDate": "July 1, 2021",
+				"rating": 5.0,
+				"comment": "Nice and Good to work with.",
+				"fee": 50,
+				"feeType": "Fixed"
+			},
+			{
+				"jobID": 8,
+				"title": "score",
+				"completionDate": "July 1, 2021",
+				"rating": 5.0,
+				"comment": "Nice and Good to work with.",
+				"fee": 50,
+				"feeType": "Fixed"
+			},
+			{
+				"jobID": 15,
+				"title": "score",
+				"completionDate": "July 1, 2021",
+				"rating": 5.0,
+				"comment": "Nice and Good to work with.",
+				"fee": 50,
+				"feeType": "Fixed"
+			}], "inProgressJobList": [] },
+		"portfolio": [
+			{ "id":1,	"portfolioImg": "", "title": "Website customization" },
+			{ "id":2,	"portfolioImg": "", "title": "Website customization 2" },
+			{ "id":3,	"portfolioImg": "", "title": "Website customization 3" },
+			{ "id":4,	"portfolioImg": "", "title": "Website customization 3" }
+		],
+		"testimonials": [],
+		"certification": [
+			{"id":1, "title": "Certificate Title 1", "from": "Certificate From", "issueDate": "July 2021", "details": "Certificate Details" },
+			{"id":2, "title": "Certificate Title 2", "from": "Certificate From", "issueDate": "July 2021", "details": "Certificate Details" }
+		],
+		"employmentHistory": [
+			{"id":1, "designation": "Designation", "institute": "Institute", "startDate": "July 2021", "endDate": "Present", "details": "Employment History Details"  },
+			{"id":2, "designation": "Designation", "institute": "Institute", "startDate": "July 2021", "endDate": "Present", "details": "Employment History Details"  }
+		],
+		"otherExp": [
+			{
+				"id" : 1,
+				"role": "Role 1",
+				"about":
+					"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tempor sapien ac nulla lobortis varius. Curabitur rutrum, nisl quis fermentum viverra, lacus nisl dapibus leo, nec vulputate sem nibh quis nibh."
+			},
+			{
+				"id" : 2,
+				"role": "Role 2",
+				"about":
+					"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tempor sapien ac nulla lobortis varius. Curabitur rutrum, nisl quis fermentum viverra, lacus nisl dapibus leo, nec vulputate sem nibh quis nibh."
+			}
+		]
+	}]
+}

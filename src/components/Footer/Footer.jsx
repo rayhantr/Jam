@@ -5,7 +5,7 @@ import "./footer.scss";
 export default function Footer() {
 	return (
 		<>
-			<div id="footer">
+			<footer id="footer" className="footer mt-auto ">
 				{/* <!-- Footer Top Section --> */}
 				<div className="footer-top-section">
 					<div className="container">
@@ -192,7 +192,7 @@ export default function Footer() {
 					</div>
 				</div>
 				{/* <!-- Footer Copyrights / End --> */}
-			</div>
+			</footer>
 		</>
 	);
 }

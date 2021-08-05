@@ -1,14 +1,14 @@
 @import "./cssVariables.scss";
 
-:root {
-	// --color-body: #fafbfe;
-	// --color-one: #2d6478;
-	// --color-two: #00cad9;
-	// --color-one-hov: #8c6eda;
-	// --color-two-hov: #20d4b6;
-	// --color-white: white;
-	// --color-error: red;
-}
+// :root {
+// 	--color-body: #fafbfe;
+// 	--color-one: #2d6478;
+// 	--color-two: #00cad9;
+// 	--color-one-hov: #8c6eda;
+// 	--color-two-hov: #20d4b6;
+// 	--color-white: white;
+// 	--color-error: red;
+// }
 
 body {
 	font-family: "Sarala", sans-serif;
@@ -74,4 +74,145 @@ code {
 			background-color: $color-two;
 		}
 	}
+}
+
+.card {
+	transition: all 0.3s ease;
+
+	.bordered {
+		border: 1px solid $color-one;
+		// box-shadow: 0 0 15px 0 rgba(154, 161, 171, 0.15);
+	}
+
+	.colored {
+		color: $color-one;
+	}
+
+	.clickable {
+		cursor: pointer;
+	}
+
+	.card-body {
+		transition: all 0.3s ease;
+	}
+
+	.hoverable:hover {
+		.card-body {
+			background-color: $color-one;
+			.card-title {
+				color: $color-white;
+			}
+		}
+	}
+}
+
+.job-card {
+	position: relative;
+	// border-left: 5px solid $color-two;
+
+	.job-title {
+		color: $color-two;
+	}
+}
+
+.employment-history,
+.exp-history {
+	position: relative;
+}
+
+.job-card,
+.employment-details,
+.exp-details {
+	&::before {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		height: 90%;
+		border-left: 5px solid $color-two;
+		border-top-right-radius: 4px;
+		border-bottom-right-radius: 4px;
+	}
+}
+
+// Rating
+.rating {
+	.w-6 {
+		width: 1.5em;
+	}
+	.cursor-pointer {
+		cursor: pointer;
+	}
+}
+
+// Tab
+.MuiTab-root {
+	padding-left: 0 !important;
+
+	.MuiTab-wrapper {
+		align-items: baseline !important;
+	}
+}
+
+.MuiTabs-indicator {
+	display: flex;
+	justify-content: center;
+	max-width: 40px;
+	// margin-left: 12px;
+}
+
+// .MuiIconButton-root {
+// 	background-color: $color-one !important;
+// 	color: white !important;
+// 	border: none !important;
+// 	cursor: pointer !important;
+// 	font-size: 1rem !important;
+// 	border-radius: 0.25rem !important;
+// 	padding: 0.25rem !important;
+// }
+
+.dropdown-menu {
+	box-shadow: $box-shadow-compact;
+	margin-top: 0.3rem !important;
+}
+
+// Certificate
+.certificate-icon {
+	img {
+		width: 100%;
+		max-height: 150px;
+	}
+}
+
+.modal-fullscreen {
+	.modal-body {
+		background-color: $color-body;
+	}
+}
+
+.portfolio-card {
+	&:last-child {
+		margin-bottom: 0 !important;
+	}
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
 }

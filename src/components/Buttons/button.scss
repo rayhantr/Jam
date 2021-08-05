@@ -3,8 +3,17 @@
 $primary: #00cad9;
 $secondary: #2d6478;
 $card-border-width: 0px;
+$dropdown-border-width: 0px;
 
 @import "bootstrap";
+
+.btn-primary {
+	color: $color-white;
+	&:hover,
+	&:focus {
+		color: white;
+	}
+}
 
 .btn-form {
 	text-transform: uppercase;
@@ -85,17 +94,30 @@ $card-border-width: 0px;
 .btn-icon {
 	padding: initial;
 	line-height: inherit;
-	height: 30px;
-	width: 30px;
-	font-size: 1rem;
 	color: $color-white;
 	background-color: $color-one;
 	border-color: $color-one;
 	transition: all 0.3s ease;
 
+	&.size-normal {
+		height: 30px;
+		width: 30px;
+		font-size: 1rem;
+	}
+
+	&.size-small {
+		height: 20px;
+		width: 20px;
+		font-size: 0.7rem;
+	}
+
 	&:hover {
 		color: $color-white;
 		box-shadow: 0 2px 5px 0 rgba(154, 161, 171, 0.5);
+	}
+
+	&::after {
+		display: none;
 	}
 }
 

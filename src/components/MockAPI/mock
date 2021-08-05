@@ -1,0 +1,49 @@
+const freelancerAPI = [
+	{
+		userID: 1,
+		userName: "User Name",
+		profileImg: "",
+		address: "address, location",
+		hourlyRate: 15.0,
+		availableHours: 30,
+		profileTitle: "Profile Title",
+		profileOverview: "Profile Overview",
+		videoIntro: "",
+		languages: [
+			{ languageName: "English", proficiency: "fluent" },
+			{ languageName: "Bangla", proficiency: "native" },
+		],
+		education: [
+			{ instituteName: "University Name", degree: "Bachelor of Science", department: "Computer Science & Engineering", startDate: "2017", endDate: "2021" },
+			{ instituteName: "University Name 2", degree: "Masters of Science", department: "Computer Science & Engineering", startDate: "2021", endDate: "2022" },
+		],
+		skills: ["Web development", "UI/UX", "Graphics Design"],
+		workHistory: { completedJobList: completedJobsList, inProgress: inProgressJobList },
+		portfolio: [
+			{ portfolioImg: "", portfolioTitle: "Website customization" },
+			{ portfolioImg: "", portfolioTitle: "Website customization" },
+			{ portfolioImg: "", portfolioTitle: "Website customization" },
+		],
+		testimonials: "",
+		certification: [
+			{ title: "Certificate Title", from: "Certificate From", issueDate: "July 2021", details: "Certificate Details" },
+			{ title: "Certificate Title", from: "Certificate From", issueDate: "July 2021", details: "Certificate Details" },
+		],
+		employmentHistory: [
+			{ designation: "Designation", institute: "Institute", startDate: "July 2021", endDate: "Present" },
+			{ designation: "Designation", institute: "Institute", startDate: "July 2021", endDate: "Present" },
+		],
+		otherExp: [
+			{
+				role: "Role",
+				about:
+					"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tempor sapien ac nulla lobortis varius. Curabitur rutrum, nisl quis fermentum viverra, lacus nisl dapibus leo, nec vulputate sem nibh quis nibh.",
+			},
+			{
+				role: "Role",
+				about:
+					"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tempor sapien ac nulla lobortis varius. Curabitur rutrum, nisl quis fermentum viverra, lacus nisl dapibus leo, nec vulputate sem nibh quis nibh.",
+			},
+		],
+	},
+];

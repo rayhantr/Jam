@@ -2,23 +2,31 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
+import { ThemeProvider } from "@material-ui/styles";
+import MaterialTheme from "./MaterialTheme";
 import MultiStepForm from "./pages/MultiStepForm";
-import Profile from "./pages/Profile";
-import ProfileUserPublic from "./components/ProfilePage/PublicView/ProfileUserPublic";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import CustomizedTabs from "./pages/Playground";
+import MyProposal from "./components/ProfilePage/Freelancer/MyProposal";
+import FreelancerProfile from "./components/ProfilePage/Freelancer/FreelancerProfile";
 
 import "./index.scss";
-// import "./components/Buttons/button.scss";
 
 ReactDOM.render(
-	<React.StrictMode>
+	// <React.StrictMode>
+	<ThemeProvider theme={MaterialTheme}>
 		<Header />
-		{/* <MultiStepForm /> */}
-		<Profile />
-		{/* <ProfileUserPublic /> */}
+		<main>
+			{/* <MultiStepForm /> */}
+			{/* <MyProposal /> */}
+			{/* <CustomizedTabs /> */}
+			<FreelancerProfile />
+		</main>
 		<Footer />
-	</React.StrictMode>,
+	</ThemeProvider>,
+	// </React.StrictMode>,
+
 	document.getElementById("root")
 );
 
