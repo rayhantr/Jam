@@ -8,7 +8,7 @@ Wait for dependencies to install. Then type the following.
 
 ### `npx json-server --watch server-api/db.json --port 8000`
 
-Will start the json-server for mock API help.\
+Will start the json-server for mock API help.
 
 ### `npm start`
 
