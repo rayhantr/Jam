@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React from "react";
-import "./footer.scss";
+import "./style.scss";
 
 export default function Footer() {
 	return (

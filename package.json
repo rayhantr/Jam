@@ -29,6 +29,7 @@
     "yup": "^0.28.1"
   },
   "scripts": {
+    "api": "json-server --watch server-api/db.json -p 8000 --delay 1500",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

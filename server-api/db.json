@@ -1,7 +1,7 @@
 {
 	"users": [{
 		"id": 1,
-		"userName": "User Name one two three",
+		"userName": "User Last Name",
 		"profileImg": "",
 		"address": "address, location",
 		"hourlyRate": 15.0,
@@ -86,7 +86,7 @@
 			{ "id":1,	"portfolioImg": "", "title": "Website customization" },
 			{ "id":2,	"portfolioImg": "", "title": "Website customization 2" },
 			{ "id":3,	"portfolioImg": "", "title": "Website customization 3" },
-			{ "id":4,	"portfolioImg": "", "title": "Website customization 3" }
+			{ "id":4,	"portfolioImg": "", "title": "Website customization 4" }
 		],
 		"testimonials": [],
 		"certification": [

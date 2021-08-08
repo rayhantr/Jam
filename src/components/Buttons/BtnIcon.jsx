@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import PropTypes from "prop-types";
 import { Row, Col, Button, Popover, Overlay } from "react-bootstrap";
-import "./button.scss";
+import "./style.scss";
 
 // Icon names and their respective components
 const ICONSTYLES = [
@@ -12,6 +12,8 @@ const ICONSTYLES = [
 	{ name: "share", icon: <i className="fas fa-share"></i> },
 	{ name: "link", icon: <i className="fas fa-link"></i> },
 	{ name: "help", icon: <i className="fas fa-question"></i> },
+	{ name: "heart", icon: <i className="far fa-heart"></i> },
+	{ name: "unlike", icon: <i className="far fa-thumbs-down"></i> },
 ];
 
 // Drop menu component

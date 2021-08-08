@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Formik, Form } from "formik";
 import { Container, Row, Col, Button, Badge } from "react-bootstrap";
-import "../Buttons/button.scss";
-import "./finalForm.scss";
+import "./style.scss";
 
 import { StepOne, StepTwo, StepThree, StepFour, StepFive, StepSix, StepSeven, StepEight, StepNine, StepTen, StepEleven, StepTwelve } from "./Forms";
 

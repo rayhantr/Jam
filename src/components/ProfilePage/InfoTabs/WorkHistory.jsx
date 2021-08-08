@@ -97,7 +97,7 @@ const WorkHistory = ({ completedJobList, inProgressJobList }) => {
 					{completedJobList.length !== 0 ? (
 						<>
 							<CompletedJobs />
-							<Pagination count={compJobNoOfPages} page={compJobPage} onChange={compJobHandleChange} defaultPage={1} shape="rounded" className="d-flex justify-content-center mt-3" />
+							<Pagination count={compJobNoOfPages} page={compJobPage} onChange={compJobHandleChange} defaultPage={1} shape="rounded" color="secondary" className="d-flex justify-content-center mt-3" />
 						</>
 					) : (
 						"You haven't completed any jobs yet."

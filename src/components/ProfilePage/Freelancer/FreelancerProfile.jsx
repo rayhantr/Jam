@@ -1,43 +1,46 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { Button } from "@material-ui/core";
-
+import { Button, LinearProgress } from "@material-ui/core";
 // MUI Icon
 import VisibilityIcon from "@material-ui/icons/Visibility";
 import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
-
-import Testimonials from "../InfoTabs/Testimonials";
-import WorkHistory from "../InfoTabs/WorkHistory";
-import Certification from "../InfoTabs/Certification";
-import EmploymentHistory from "../InfoTabs/EmploymentHistory";
-import OtherExp from "../InfoTabs/OtherExp";
-import VideoIntro from "../InfoTabs/VideoIntro";
-
-// import freelancerAPI from "../../MockAPI/freelancerAPI";
 import axios from "axios";
-import UserInfo from "../InfoTabs/UserInfo";
-import ViewProfile from "../InfoTabs/ViewProfile";
-import AvailableHours from "../InfoTabs/AvailableHours";
-import Languages from "../InfoTabs/Languages";
-import Education from "../InfoTabs/Education";
-import ProfileTitleView from "../InfoTabs/ProfileTitleView";
-import Portfolio from "../InfoTabs/Portfolio";
-import Skills from "../InfoTabs/Skills";
+
+import {
+	Testimonials,
+	WorkHistory,
+	Certification,
+	EmploymentHistory,
+	OtherExp,
+	VideoIntro,
+	UserInfo,
+	ViewProfile,
+	AvailableHours,
+	Languages,
+	Education,
+	ProfileTitleView,
+	Portfolio,
+	Skills,
+} from "../InfoTabs";
 
 const FreelancerProfile = () => {
 	// Data from API
-	const [activeUser, setActiveUser] = useState([]);
-	const [languages, setLanguages] = useState([]);
-	const [education, setEducation] = useState([]);
-	const [skills, setSkills] = useState([]);
-	const [completedJobList, setCompletedJobList] = useState([]);
-	const [inProgressJobList, setInProgressJobList] = useState([]);
-	const [portfolioList, setPortfolioList] = useState([]);
-	const [certificationList, setCertificationList] = useState([]);
-	const [employmentHistory, setEmploymentHistory] = useState([]);
-	const [otherExpList, setOtherExpList] = useState([]);
-	const [testimonialList, setTestimonialList] = useState([]);
+	const [userInformation, setUserInformation] = useState({
+		otherData: [],
+		languages: [],
+		education: [],
+		skills: [],
+		completedJobList: [],
+		inProgressJobList: [],
+		portfolioList: [],
+		certificationList: [],
+		employmentHistory: [],
+		otherExpList: [],
+		testimonialList: [],
+		isLoading: false,
+	});
+
 	// Public View
 	const [publicView, setPublicView] = useState(false);
 
@@ -45,19 +48,25 @@ const FreelancerProfile = () => {
 	useEffect(() => {
 		const getData = async () => {
 			try {
+				setUserInformation({ isLoading: true });
 				const response = await axios.get("http://localhost:8000/users/1");
+				// Set User data from API call
 				const userData = response.data;
-				setActiveUser(userData);
-				setLanguages(userData.languages);
-				setEducation(userData.education);
-				setSkills(userData.skills);
-				setCompletedJobList(userData.workHistory.completedJobList);
-				setInProgressJobList(userData.workHistory.inProgressJobList);
-				setPortfolioList(userData.portfolio);
-				setCertificationList(userData.certification);
-				setEmploymentHistory(userData.employmentHistory);
-				setOtherExpList(userData.otherExp);
-				setTestimonialList(userData.testimonials);
+				// Set user information for each field
+				setUserInformation({
+					otherData: userData,
+					languages: userData.languages,
+					education: userData.education,
+					skills: userData.skills,
+					completedJobList: userData.workHistory.completedJobList,
+					inProgressJobList: userData.workHistory.inProgressJobList,
+					portfolioList: userData.portfolio,
+					certificationList: userData.certification,
+					employmentHistory: userData.employmentHistory,
+					otherExpList: userData.otherExp,
+					testimonialList: userData.testimonials,
+					isLoading: false,
+				});
 			} catch (error) {
 				console.log(error);
 			}
@@ -90,7 +99,7 @@ const FreelancerProfile = () => {
 	const Panel1 = () => {
 		return (
 			<Col xs={12} className="mt-3">
-				<UserInfo activeUser={activeUser} />
+				<UserInfo activeUser={userInformation.otherData} />
 			</Col>
 		);
 	};
@@ -104,28 +113,28 @@ const FreelancerProfile = () => {
 				</Col>
 
 				<ShowPanel
-					empty={!activeUser.videoIntro}
+					empty={!userInformation.otherData.videoIntro}
 					content={
 						<Col className="mt-3">
-							<VideoIntro videoIntro={activeUser.videoIntro} publicView={publicView} />
+							<VideoIntro videoIntro={userInformation.otherData.videoIntro} publicView={publicView} />
 						</Col>
 					}
 					publicView={publicView}
 				/>
 
 				<Col className="mt-3">
-					<AvailableHours activeUser={activeUser} publicView={publicView} />
+					<AvailableHours activeUser={userInformation.otherData} publicView={publicView} />
 				</Col>
 
 				<Col className="mt-3">
-					<Languages languages={languages} publicView={publicView} />
+					<Languages languages={userInformation.languages} publicView={publicView} />
 				</Col>
 
 				<ShowPanel
-					empty={!education.length}
+					empty={!userInformation.education.length}
 					content={
 						<Col className="mt-3">
-							<Education education={education} publicView={publicView} />
+							<Education education={userInformation.education} publicView={publicView} />
 						</Col>
 					}
 					publicView={publicView}
@@ -139,31 +148,31 @@ const FreelancerProfile = () => {
 		return (
 			<Col xs={12} md={8} className="mt-3">
 				<Col>
-					<ProfileTitleView activeUser={activeUser} publicView={publicView} />
+					<ProfileTitleView activeUser={userInformation.otherData} publicView={publicView} />
 				</Col>
 
 				<ShowPanel
-					empty={!completedJobList.length && !inProgressJobList.length}
+					empty={!userInformation.completedJobList.length && !userInformation.inProgressJobList.length}
 					content={
 						<Col className="mt-3">
-							<WorkHistory completedJobList={completedJobList} inProgressJobList={inProgressJobList} />
+							<WorkHistory completedJobList={userInformation.completedJobList} inProgressJobList={userInformation.inProgressJobList} />
 						</Col>
 					}
 					publicView={publicView}
 				/>
 
 				<ShowPanel
-					empty={!portfolioList.length}
+					empty={!userInformation.portfolioList.length}
 					content={
 						<Col className="mt-3">
-							<Portfolio portfolioList={portfolioList} publicView={publicView} />
+							<Portfolio portfolioList={userInformation.portfolioList} publicView={publicView} />
 						</Col>
 					}
 					publicView={publicView}
 				/>
 
 				<Col className="mt-3">
-					<Skills skills={skills} publicView={publicView} />
+					<Skills skills={userInformation.skills} publicView={publicView} />
 				</Col>
 			</Col>
 		);
@@ -176,19 +185,35 @@ const FreelancerProfile = () => {
 				<Panel1 />
 				<Panel2 />
 				<Panel3 />
-				<ShowPanel empty={!testimonialList.length} content={<Testimonials testimonialList={testimonialList} publicView={publicView} />} publicView={publicView} />
-				<ShowPanel empty={!certificationList.length} content={<Certification certificationList={certificationList} publicView={publicView} />} publicView={publicView} />
-				<ShowPanel empty={!employmentHistory.length} content={<EmploymentHistory employmentHistory={employmentHistory} publicView={publicView} />} publicView={publicView} />
-				<ShowPanel empty={!otherExpList.length} content={<OtherExp otherExpList={otherExpList} publicView={publicView} />} publicView={publicView} />
+				<ShowPanel empty={!userInformation.testimonialList.length} content={<Testimonials testimonialList={userInformation.testimonialList} publicView={publicView} />} publicView={publicView} />
+				<ShowPanel
+					empty={!userInformation.certificationList.length}
+					content={<Certification certificationList={userInformation.certificationList} publicView={publicView} />}
+					publicView={publicView}
+				/>
+				<ShowPanel
+					empty={!userInformation.employmentHistory.length}
+					content={<EmploymentHistory employmentHistory={userInformation.employmentHistory} publicView={publicView} />}
+					publicView={publicView}
+				/>
+				<ShowPanel empty={!userInformation.otherExpList.length} content={<OtherExp otherExpList={userInformation.otherExpList} publicView={publicView} />} publicView={publicView} />
 			</>
 		);
 	};
 
 	return (
-		<Container className="my-2 my-md-5">
-			<Row>
-				<ViewChange onClick={handleViewChange} publicView={publicView} />
-				<FullPageView />
+		<Container className="my-3 my-md-5">
+			<Row className="g-3">
+				{userInformation.isLoading ? (
+					<Col>
+						<LinearProgress color="secondary" />
+					</Col>
+				) : (
+					<>
+						<ViewChange onClick={handleViewChange} publicView={publicView} />
+						<FullPageView />
+					</>
+				)}
 			</Row>
 		</Container>
 	);

@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import "./header.scss";
+import "./style.scss";
 import profile from "../../images/profile.jpg";
 
 export default function Header() {
 	return (
 		<>
-			<nav className="navbar container-fluid navbar-expand-lg navbar-dark bg-light">
+			<nav className="navbar container-fluid navbar-expand-lg">
 				<div className="container">
 					<a className="navbar-brand" href="#">
 						JamTalent
