@@ -1,0 +1,29 @@
+@import "./bootstrap-custom";
+
+$color-primary: $primary;
+$color-secondary: $secondary;
+$color-white: white;
+$color-gray: #777777;
+$color-body: #fafbfe;
+$color-error: red;
+$box-shadow-light: 0 0 35px 0 rgba(154, 161, 171, 0.15);
+$box-shadow-compact: 0 0 5px 0 rgba(154, 161, 171, 0.35);
+$box-shadow-600: 0 0px 10px 2px rgba(154, 161, 171, 0.5);
+$gray-light: #a1a1a1;
+$blue-light: #ebeef9;
+
+// linear gradients
+$lgr-primary-light: linear-gradient(
+	to right,
+	rgba(
+		$color: $color-primary,
+		$alpha: 0.2,
+	),
+	transparent
+);
+
+// @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap");
+
+$font-family: "Poppins", sans-serif;
+// $font-family: "Source Sans Pro", sans-serif;

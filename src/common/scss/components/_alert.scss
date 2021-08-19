@@ -1,0 +1,44 @@
+.notify {
+	overflow: hidden;
+
+	&-icon {
+		$fontSize: 1.7rem;
+
+		background-color: rgba($color: $color-primary, $alpha: 0.2);
+		color: $color-secondary;
+		font-size: $fontSize;
+
+		i {
+			min-width: calc(#{$fontSize} + 0.5rem);
+		}
+	}
+
+	&-body {
+		h4,
+		h5,
+		h6 {
+			color: $color-secondary;
+		}
+	}
+
+	.fdv {
+		background-color: aqua;
+		height: 100%;
+	}
+}
+
+.infoBlock {
+	overflow: hidden;
+	position: relative;
+
+	&-title {
+		background-image: $lgr-primary-light;
+
+		h4,
+		h5,
+		h6 {
+			color: $color-secondary;
+			font-weight: bold;
+		}
+	}
+}

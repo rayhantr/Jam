@@ -5,7 +5,7 @@ const TabPanel = (props) => {
 	const { children, value, index, ...other } = props;
 
 	return (
-		<div className="mt-3" role="tabpanel" hidden={value !== index} id={`tabpanel-${index}`} aria-labelledby={`tab-${index}`} {...other}>
+		<div role="tabpanel" hidden={value !== index} id={`tabpanel-${index}`} aria-labelledby={`tab-${index}`} {...other}>
 			{value === index && (
 				<div>
 					<div>{children}</div>

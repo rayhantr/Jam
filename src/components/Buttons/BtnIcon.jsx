@@ -1,7 +1,27 @@
 import React, { useState, useRef } from "react";
 import PropTypes from "prop-types";
-import { Row, Col, Button, Popover, Overlay } from "react-bootstrap";
-import "./style.scss";
+import { Row, Col, Popover, Overlay } from "react-bootstrap";
+import { Button, makeStyles } from "@material-ui/core";
+
+// button css
+const useStyles = makeStyles({
+	root: {
+		padding: "0.375rem",
+		minWidth: "auto",
+		maxWidth: "1.75rem",
+		borderRadius: "0.25rem",
+	},
+});
+
+const errorBtn = makeStyles((theme) => ({
+	root: {
+		backgroundColor: theme.palette.error.main,
+		color: "#fff",
+		"&:hover": {
+			backgroundColor: theme.palette.error.dark,
+		},
+	},
+}));
 
 // Icon names and their respective components
 const ICONSTYLES = [
@@ -34,29 +54,33 @@ const DropMenu = ({ menu, menuShow, ...others }) => {
 };
 
 // Delete pop component
-const DeletePop = ({ show, target, containerRef, onClick }) => (
-	<Overlay show={show} target={target} placement="bottom-end" container={containerRef}>
-		<Popover id="popover-delete">
-			<Popover.Body>
-				<p>Are you sure you want to delete?</p>
-				<Row>
-					<Col>
-						<Button variant="danger" className="col-12">
-							Yes
-						</Button>
-					</Col>
-					<Col>
-						<Button variant="primary" className="col-12" onClick={onClick}>
-							No
-						</Button>
-					</Col>
-				</Row>
-			</Popover.Body>
-		</Popover>
-	</Overlay>
-);
+const DeletePop = ({ show, target, containerRef, onClick }) => {
+	const classes = errorBtn();
 
-const BtnIcon = ({ iconType, className, size, ...others }) => {
+	return (
+		<Overlay show={show} target={target} placement="bottom-end" container={containerRef}>
+			<Popover id="popover-delete">
+				<Popover.Body>
+					<p>Are you sure you want to delete?</p>
+					<Row className="g-3">
+						<Col>
+							<Button variant="contained" className={`col-12 ${classes.root}`} disableElevation>
+								Yes
+							</Button>
+						</Col>
+						<Col>
+							<Button variant="contained" color="primary" className="col-12" onClick={onClick} disableElevation>
+								No
+							</Button>
+						</Col>
+					</Row>
+				</Popover.Body>
+			</Popover>
+		</Overlay>
+	);
+};
+
+const BtnIcon = ({ iconType, className, size, color, ...others }) => {
 	// Find and set icon name and component
 	const iconIndex = ICONSTYLES.findIndex((ico) => ico.name === iconType);
 	const iconComponent = iconIndex >= 0 ? ICONSTYLES[iconIndex].icon : ICONSTYLES[0].icon;
@@ -100,10 +124,22 @@ const BtnIcon = ({ iconType, className, size, ...others }) => {
 		dropdownClass = dropdownOthers = content = null;
 	}
 
+	// button css
+	const classes = useStyles();
+	const errCls = errorBtn();
+
 	// main button render with content
 	return (
 		<>
-			<Button variant={`icon-${iconType}`} className={`btn-icon size-${size} ${className} ${dropdownClass}`} onClick={handleClick} {...dropdownOthers} {...others}>
+			<Button
+				variant="contained"
+				color={color}
+				className={`${className} ${dropdownClass} ${classes.root} ${iconType === "delete" && errCls.root}`}
+				onClick={handleClick}
+				{...dropdownOthers}
+				{...others}
+				disableElevation
+			>
 				{iconComponent}
 			</Button>
 			{content}
@@ -116,6 +152,7 @@ BtnIcon.defaultProps = {
 	className: "",
 	iconType: "edit",
 	size: "normal",
+	color: "secondary",
 };
 
 BtnIcon.propTypes = {

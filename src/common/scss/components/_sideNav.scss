@@ -1,0 +1,23 @@
+.sideNav {
+	a {
+		color: $color-gray;
+	}
+
+	.Mui-selected {
+		background-color: rgba($color: $color-primary, $alpha: 0.2) !important;
+
+		.MuiListItemIcon-root,
+		.MuiListItemText-root {
+			color: $color-secondary;
+		}
+	}
+
+	&-responsive {
+		background-color: $color-white;
+		background-image: $lgr-primary-light;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 999;
+	}
+}

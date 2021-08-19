@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import "./style.scss";
-import profile from "../../images/profile.jpg";
+import profile from "../../common/images/profile.jpg";
 
 export default function Header() {
 	return (
