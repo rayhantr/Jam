@@ -1,11 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import { Button, LinearProgress } from "@material-ui/core";
 // MUI Icon
 import VisibilityIcon from "@material-ui/icons/Visibility";
 import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
+import SettingsIcon from "@material-ui/icons/Settings";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 import {
 	Testimonials,
@@ -87,7 +89,10 @@ const FreelancerProfile = () => {
 	// View changing button
 	const ViewChange = ({ onClick, publicView }) => {
 		return (
-			<Col xs="auto" className="ms-auto">
+			<Col xs="auto" className="ms-auto px-3 px-md-2">
+				<Button component={Link} to="/profile/settings" className="me-3 text-white" variant="contained" color="secondary" startIcon={<SettingsIcon />} disableElevation>
+					Settings
+				</Button>
 				<Button variant="contained" color="secondary" startIcon={publicView ? <VisibilityOffIcon /> : <VisibilityIcon />} disableElevation onClick={onClick}>
 					{publicView ? "Close" : "See"} Public View
 				</Button>
@@ -202,20 +207,20 @@ const FreelancerProfile = () => {
 	};
 
 	return (
-		<Container className="my-3 my-md-5">
-			<Row className="g-3">
-				{userInformation.isLoading ? (
-					<Col>
-						<LinearProgress color="secondary" />
-					</Col>
-				) : (
-					<>
-						<ViewChange onClick={handleViewChange} publicView={publicView} />
-						<FullPageView />
-					</>
-				)}
-			</Row>
-		</Container>
+		// <Container className="my-3 my-md-5">
+		<Row className="gy-3 gx-0 gx-md-3">
+			{userInformation.isLoading ? (
+				<Col>
+					<LinearProgress color="secondary" />
+				</Col>
+			) : (
+				<>
+					<ViewChange onClick={handleViewChange} publicView={publicView} />
+					<FullPageView />
+				</>
+			)}
+		</Row>
+		// </Container>
 	);
 };
 

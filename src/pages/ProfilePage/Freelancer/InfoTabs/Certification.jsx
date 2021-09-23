@@ -4,37 +4,6 @@ import BtnIcon from "components/Buttons/BtnIcon";
 import ModalForm from "components/Modal/ModalForm";
 import EmptyAdd from "components/EmptyAdd/EmptyAdd";
 
-const FormFields = () => {
-	return (
-		<Row className="align-items-end">
-			<Col xs={12} className="mb-3">
-				<Form.Group controlId="title">
-					<Form.Label>Certificate Title</Form.Label>
-					<Form.Control type="text" name="title" />
-				</Form.Group>
-			</Col>
-			<Col xs={12} className="mb-3">
-				<Form.Group controlId="from">
-					<Form.Label>Certified From</Form.Label>
-					<Form.Control type="text" name="from" />
-				</Form.Group>
-			</Col>
-			<Col xs={12} className="mb-3">
-				<Form.Group controlId="issueDate">
-					<Form.Label>Issued Date</Form.Label>
-					<Form.Control type="text" name="issueDate" />
-				</Form.Group>
-			</Col>
-			<Col xs={12}>
-				<Form.Group controlId="details">
-					<Form.Label>About the Certificate</Form.Label>
-					<Form.Control as="textarea" rows={4} name="details" />
-				</Form.Group>
-			</Col>
-		</Row>
-	);
-};
-
 const Certificate = ({ certificates }) => {
 	return (
 		<Row>
@@ -65,6 +34,36 @@ const Certification = ({ certificationList, publicView }) => {
 	// 	setModalProps({ open: true, action: "Edit" });
 	// };
 
+	// modal field forms
+	const renderFormFields = (
+		<Row className="align-items-end">
+			<Col xs={12} className="mb-3">
+				<Form.Group controlId="title">
+					<Form.Label>Certificate Title</Form.Label>
+					<Form.Control type="text" name="title" />
+				</Form.Group>
+			</Col>
+			<Col xs={12} className="mb-3">
+				<Form.Group controlId="from">
+					<Form.Label>Certified From</Form.Label>
+					<Form.Control type="text" name="from" />
+				</Form.Group>
+			</Col>
+			<Col xs={12} className="mb-3">
+				<Form.Group controlId="issueDate">
+					<Form.Label>Issued Date</Form.Label>
+					<Form.Control type="text" name="issueDate" />
+				</Form.Group>
+			</Col>
+			<Col xs={12}>
+				<Form.Group controlId="details">
+					<Form.Label>About the Certificate</Form.Label>
+					<Form.Control as="textarea" rows={4} name="details" />
+				</Form.Group>
+			</Col>
+		</Row>
+	);
+
 	return (
 		<>
 			<Col xs={12} className="mt-3">
@@ -94,7 +93,7 @@ const Certification = ({ certificationList, publicView }) => {
 			</Col>
 			{/* Modal */}
 			<ModalForm show={modalProps.open} onHide={handleClose} action={modalProps.action} title="Certification">
-				<FormFields />
+				{renderFormFields}
 			</ModalForm>
 		</>
 	);

@@ -3,8 +3,20 @@ import { Row, Col, Card, Form } from "react-bootstrap";
 import BtnIcon from "components/Buttons/BtnIcon";
 import ModalForm from "components/Modal/ModalForm";
 
-const FormFields = () => {
-	return (
+const Languages = ({ languages, publicView }) => {
+	// Modal Control
+	const [modalProps, setModalProps] = useState({ open: false, action: "" });
+
+	const handleClose = () => setModalProps({ open: false });
+	const addHandleShow = () => {
+		setModalProps({ open: true, action: "Add" });
+	};
+	const editHandleShow = () => {
+		setModalProps({ open: true, action: "Edit" });
+	};
+
+	// modal field forms
+	const renderFormFields = (
 		<Row className="align-items-end">
 			<Col xs={6}>
 				<Form.Group controlId="languageName">
@@ -21,19 +33,6 @@ const FormFields = () => {
 			</Col>
 		</Row>
 	);
-};
-
-const Languages = ({ languages, publicView }) => {
-	// Modal Control
-	const [modalProps, setModalProps] = useState({ open: false, action: "" });
-
-	const handleClose = () => setModalProps({ open: false });
-	const addHandleShow = () => {
-		setModalProps({ open: true, action: "Add" });
-	};
-	const editHandleShow = () => {
-		setModalProps({ open: true, action: "Edit" });
-	};
 
 	return (
 		<>
@@ -58,7 +57,7 @@ const Languages = ({ languages, publicView }) => {
 			</Card>
 			{/* Modal */}
 			<ModalForm show={modalProps.open} onHide={handleClose} action={modalProps.action} title="Languages">
-				<FormFields />
+				{renderFormFields}
 			</ModalForm>
 		</>
 	);

@@ -12,7 +12,7 @@ const ContactInfo = () => {
 			<h3 className="title-primary d-none d-md-block">Membership & Connects</h3>
 
 			{/* Account */}
-			<Card body className="mb-3">
+			<Card body>
 				<Card.Title className="row g-0 justify-content-between align-items-center">
 					Summary
 					<BtnIcon />
@@ -22,9 +22,7 @@ const ContactInfo = () => {
 				{/* Content */}
 				<Notify icon={<i className="fas fa-layer-group"></i>} className="mb-3">
 					<Notify.Body>
-						<h6>
-							<strong>Current Plan</strong>
-						</h6>
+						<h6>Current Plan</h6>
 						<p className="text-primary mb-0">Freelancer Basic</p>
 					</Notify.Body>
 					<Notify.Action>
@@ -36,9 +34,7 @@ const ContactInfo = () => {
 
 				<Notify icon={<i className="fas fa-network-wired"></i>} className="mb-3">
 					<Notify.Body>
-						<h6>
-							<strong>Available Connects</strong>
-						</h6>
+						<h6>Available Connects</h6>
 						<p className="text-primary mb-0">100</p>
 					</Notify.Body>
 					<Notify.Action>
@@ -59,9 +55,7 @@ const ContactInfo = () => {
 
 				<Notify icon={<i className="fas fa-people-arrows"></i>} className="mb-3">
 					<Notify.Body>
-						<h6>
-							<strong>Membership Connects</strong>
-						</h6>
+						<h6>Membership Connects</h6>
 						<p className="text-primary mb-0">10 per month</p>
 						<small className="text-gray-light">Any unused Connects at the end of your billing cycle will roll over to the next month (up to 200)</small>
 						<BtnLink>
@@ -72,18 +66,14 @@ const ContactInfo = () => {
 
 				<Notify icon={<i className="fas fa-hand-holding-usd"></i>} className="mb-3">
 					<Notify.Body>
-						<h6>
-							<strong>Membership Fee</strong>
-						</h6>
+						<h6>Membership Fee</h6>
 						<p className="text-primary mb-0">Free</p>
 					</Notify.Body>
 				</Notify>
 
 				<Notify icon={<i className="fas fa-calendar-week"></i>}>
 					<Notify.Body>
-						<h6>
-							<strong>Current Billing Cycle</strong>
-						</h6>
+						<h6>Current Billing Cycle</h6>
 						<time className="text-primary mb-0">Jul 1, 2021 - Aug 1, 2021</time>
 						<br />
 						<BtnLink className="ps-0 mt-1">Learn More</BtnLink>

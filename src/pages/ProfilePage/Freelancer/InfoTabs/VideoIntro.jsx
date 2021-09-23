@@ -4,19 +4,6 @@ import BtnIcon from "components/Buttons/BtnIcon";
 import ModalForm from "components/Modal/ModalForm";
 import EmptyAdd from "components/EmptyAdd/EmptyAdd";
 
-const FormFields = () => {
-	return (
-		<Row className="align-items-end">
-			<Col xs={12} className="mb-3">
-				<Form.Group controlId="videoIntro">
-					<Form.Label>Add a video introduction</Form.Label>
-					<Form.Control type="text" name="videoIntro" />
-				</Form.Group>
-			</Col>
-		</Row>
-	);
-};
-
 const VideoIntro = ({ videoIntro, publicView }) => {
 	// Modal Control
 	const [modalProps, setModalProps] = useState({ open: false, action: "" });
@@ -28,6 +15,18 @@ const VideoIntro = ({ videoIntro, publicView }) => {
 	// const editHandleShow = () => {
 	// 	setModalProps({ open: true, action: "Edit" });
 	// };
+
+	// modal field forms
+	const renderFormFields = (
+		<Row className="align-items-end">
+			<Col xs={12} className="mb-3">
+				<Form.Group controlId="videoIntro">
+					<Form.Label>Add a video introduction</Form.Label>
+					<Form.Control type="text" name="videoIntro" />
+				</Form.Group>
+			</Col>
+		</Row>
+	);
 
 	return (
 		<>
@@ -50,7 +49,7 @@ const VideoIntro = ({ videoIntro, publicView }) => {
 			</Card>
 			{/* Modal */}
 			<ModalForm show={modalProps.open} onHide={handleClose} action={modalProps.action} title="Video Introduction">
-				<FormFields />
+				{renderFormFields}
 			</ModalForm>
 		</>
 	);

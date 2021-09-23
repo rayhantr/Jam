@@ -9,14 +9,15 @@ import RenderRoutes from "routes/RenderRoutes";
 import ROUTES from "routes/ROUTES";
 
 import "./index.scss";
+import { Container } from "react-bootstrap";
 
 function App() {
 	return (
 		<ThemeProvider theme={MaterialTheme}>
-			<Header />
-			<main id="main-content">
-				<RenderRoutes routes={ROUTES} />
-			</main>
+			{/* <Header /> */}
+			{/* <Container as="main" fluid="lg" className="my-3 my-lg-4"> */}
+			<RenderRoutes routes={ROUTES} />
+			{/* </Container> */}
 			<Footer />
 		</ThemeProvider>
 	);

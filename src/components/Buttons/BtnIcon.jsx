@@ -8,7 +8,8 @@ const useStyles = makeStyles({
 	root: {
 		padding: "0.375rem",
 		minWidth: "auto",
-		maxWidth: "1.75rem",
+		// maxWidth: "1.75rem",
+		width: "1.75rem",
 		borderRadius: "0.25rem",
 	},
 });
@@ -34,6 +35,7 @@ const ICONSTYLES = [
 	{ name: "help", icon: <i className="fas fa-question"></i> },
 	{ name: "heart", icon: <i className="far fa-heart"></i> },
 	{ name: "unlike", icon: <i className="far fa-thumbs-down"></i> },
+	{ name: "close", icon: <i className="fas fa-times"></i> },
 ];
 
 // Drop menu component
@@ -134,6 +136,7 @@ const BtnIcon = ({ iconType, className, size, color, ...others }) => {
 			<Button
 				variant="contained"
 				color={color}
+				size={size}
 				className={`${className} ${dropdownClass} ${classes.root} ${iconType === "delete" && errCls.root}`}
 				onClick={handleClick}
 				{...dropdownOthers}
@@ -151,7 +154,6 @@ const BtnIcon = ({ iconType, className, size, color, ...others }) => {
 BtnIcon.defaultProps = {
 	className: "",
 	iconType: "edit",
-	size: "normal",
 	color: "secondary",
 };
 

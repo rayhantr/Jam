@@ -80,7 +80,7 @@ const Panel2 = () => {
 				</Form>
 			</Card>
 			{/* Tab buttons */}
-			<Sticky innerActiveClass="sticky-active" enabled={true} innerZ={1200} bottomBoundary="#main-content">
+			<Sticky top="#topNav" innerActiveClass="sticky-active" enabled={true} innerZ={1200} bottomBoundary="#main-content">
 				<Card>
 					<Card.Body className="p-0">
 						<Tabs value={value} onChange={tabChange} indicatorColor="primary" textColor="primary" aria-label="Feed Tabs">

@@ -1,10 +1,11 @@
 /* eslint-disable react/jsx-no-target-blank */
+import { Toolbar } from "@material-ui/core";
 import React from "react";
 
 export default function Footer() {
 	return (
 		<>
-			<footer id="footer" className="footer mt-auto ">
+			<footer id="footer" className="footer mt-auto d-none">
 				{/* <!-- Footer Top Section --> */}
 				<div className="footer-top-section">
 					<div className="container">
@@ -192,6 +193,7 @@ export default function Footer() {
 				</div>
 				{/* <!-- Footer Copyrights / End --> */}
 			</footer>
+			<Toolbar className="d-block d-md-none"></Toolbar>
 		</>
 	);
 }

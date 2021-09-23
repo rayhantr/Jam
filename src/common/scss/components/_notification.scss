@@ -1,0 +1,51 @@
+.block {
+	$border-radius: 0.5em;
+	$color-blue-light: rgba(
+		$color: $color-blue-light,
+		$alpha: 0.4,
+	);
+
+	position: relative;
+	border-radius: $border-radius;
+	transition: all 0.3s ease;
+
+	&-icon {
+		font-size: 2em;
+		border-radius: $border-radius;
+	}
+
+	&-separator {
+		height: 1px;
+		background-image: linear-gradient(to right, transparent, $color-blue-light, transparent);
+	}
+
+	&-menu-btn {
+		visibility: hidden;
+	}
+
+	&:hover {
+		background: $color-blue-light;
+
+		.block-menu-btn {
+			visibility: visible;
+		}
+	}
+
+	&-time {
+		font-size: 0.8em;
+	}
+}
+
+.fa-fr {
+	display: flex;
+	width: 1.25em;
+	height: 1.25em;
+	justify-content: center;
+	align-items: center;
+}
+
+@include media-breakpoint-down(md) {
+	.block-menu-btn {
+		visibility: visible;
+	}
+}

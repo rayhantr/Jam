@@ -4,8 +4,20 @@ import BtnIcon from "components/Buttons/BtnIcon";
 import ModalForm from "components/Modal/ModalForm";
 import EmptyAdd from "components/EmptyAdd/EmptyAdd";
 
-const FormFields = () => {
-	return (
+const Testimonials = ({ testimonialList, publicView }) => {
+	// Modal Control
+	const [modalProps, setModalProps] = useState({ open: false, action: "" });
+
+	const handleClose = () => setModalProps({ open: false });
+	const addHandleShow = () => {
+		setModalProps({ open: true, action: "Add" });
+	};
+	// const editHandleShow = () => {
+	// 	setModalProps({ open: true, action: "Edit" });
+	// };
+
+	// modal field forms
+	const renderFormFields = (
 		<Row className="align-items-end">
 			<Col xs={12} className="mb-3">
 				<Form.Group controlId="title">
@@ -21,19 +33,6 @@ const FormFields = () => {
 			</Col>
 		</Row>
 	);
-};
-
-const Testimonials = ({ testimonialList, publicView }) => {
-	// Modal Control
-	const [modalProps, setModalProps] = useState({ open: false, action: "" });
-
-	const handleClose = () => setModalProps({ open: false });
-	const addHandleShow = () => {
-		setModalProps({ open: true, action: "Add" });
-	};
-	// const editHandleShow = () => {
-	// 	setModalProps({ open: true, action: "Edit" });
-	// };
 
 	return (
 		<Col xs={12} className="mt-3">
@@ -62,7 +61,7 @@ const Testimonials = ({ testimonialList, publicView }) => {
 			</Card>
 			{/* Modal */}
 			<ModalForm show={modalProps.open} onHide={handleClose} action={modalProps.action} title="Testimonials">
-				<FormFields />
+				{renderFormFields}
 			</ModalForm>
 		</Col>
 	);

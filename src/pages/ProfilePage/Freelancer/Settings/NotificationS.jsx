@@ -15,7 +15,7 @@ const NotificationS = () => {
 				<hr />
 
 				{/* Desktop */}
-				<InfoBlock title={<h5 className="mb-0">Desktop</h5>} className="mb-3">
+				<InfoBlock title="Desktop" tagType="h6" className="mb-3">
 					<InfoBlock.Body>
 						<Row className="g-3">
 							<Form.Group as={Col} xs={12} md={6}>
@@ -44,7 +44,7 @@ const NotificationS = () => {
 				</InfoBlock>
 
 				{/* Mobile */}
-				<InfoBlock title={<h5 className="mb-0">Mobile</h5>} className="mb-3">
+				<InfoBlock title="Mobile" tagType="h6" className="mb-3">
 					<InfoBlock.Body>
 						{/* Select */}
 						<Row className="g-3">
@@ -74,7 +74,7 @@ const NotificationS = () => {
 				</InfoBlock>
 
 				{/* Email */}
-				<InfoBlock title={<h5 className="mb-0">Email</h5>}>
+				<InfoBlock title="Email" tagType="h6">
 					<InfoBlock.Body>
 						{/* Select */}
 						<Row className="g-3">
@@ -105,12 +105,12 @@ const NotificationS = () => {
 			</Card>
 
 			{/* Email updates */}
-			<Card body className="mb-3">
+			<Card body>
 				<Card.Title className="row g-0 justify-content-between align-items-center">Email Updates</Card.Title>
 				<hr />
 
 				{/* Recruiting */}
-				<InfoBlock title={<h5 className="mb-0">Recruiting</h5>} className="mb-3">
+				<InfoBlock title="Recruiting" tagType="h6" className="mb-3">
 					<InfoBlock.Body>
 						{/* Checkboxes */}
 						<FormGroup>
@@ -126,7 +126,7 @@ const NotificationS = () => {
 					</InfoBlock.Body>
 				</InfoBlock>
 
-				<InfoBlock title={<h5 className="mb-0">Freelancer and Agency Proposals</h5>} className="mb-3">
+				<InfoBlock title="Freelancer and Agency Proposals" tagType="h6" className="mb-3">
 					<InfoBlock.Body>
 						{/* Checkboxes */}
 						<FormGroup>
@@ -141,7 +141,7 @@ const NotificationS = () => {
 				</InfoBlock>
 
 				{/* Contracts */}
-				<InfoBlock title={<h5 className="mb-0">Contracts</h5>} className="mb-3">
+				<InfoBlock title="Contracts" tagType="h6" className="mb-3">
 					<InfoBlock.Body>
 						{/* Checkboxes */}
 						<FormGroup>
@@ -160,7 +160,7 @@ const NotificationS = () => {
 				</InfoBlock>
 
 				{/* Group & Invitations */}
-				<InfoBlock title={<h5 className="mb-0">Group & Invitations</h5>} className="mb-3">
+				<InfoBlock title="Group & Invitations" tagType="h6" className="mb-3">
 					<InfoBlock.Body>
 						{/* Checkboxes */}
 						<FormGroup>
@@ -173,7 +173,7 @@ const NotificationS = () => {
 				</InfoBlock>
 
 				{/* Membership */}
-				<InfoBlock title={<h5 className="mb-0">Membership</h5>} className="mb-3">
+				<InfoBlock title="Membership" tagType="h6" className="mb-3">
 					<InfoBlock.Body>
 						{/* Checkboxes */}
 						<FormGroup>
@@ -183,7 +183,7 @@ const NotificationS = () => {
 				</InfoBlock>
 
 				{/* Miscellaneous */}
-				<InfoBlock title={<h5 className="mb-0">Miscellaneous</h5>} className="mb-3">
+				<InfoBlock title="Miscellaneous" tagType="h6" className="mb-3">
 					<InfoBlock.Body>
 						{/* Checkboxes */}
 						<FormGroup>
@@ -195,7 +195,7 @@ const NotificationS = () => {
 				</InfoBlock>
 
 				{/* Project Recommendation For Our Top Talent */}
-				<InfoBlock title={<h5 className="mb-0">Project Recommendation For Our Top Talent</h5>} className="mb-3">
+				<InfoBlock title="Project Recommendation For Our Top Talent" tagType="h6" className="mb-3">
 					<InfoBlock.Body>
 						{/* Checkboxes */}
 						<FormGroup>
@@ -205,7 +205,7 @@ const NotificationS = () => {
 				</InfoBlock>
 
 				{/* Communications from JamTalent */}
-				<InfoBlock title={<h5 className="mb-0">Communications from JamTalent</h5>}>
+				<InfoBlock title="Communications from JamTalent" tagType="h6">
 					<InfoBlock.Body>
 						{/* Checkboxes */}
 						<FormGroup>

@@ -14,13 +14,13 @@ const Teams = () => {
 			<Card body className="mb-3">
 				{/* Content */}
 				<Row className="justify-content-center align-items-center">
-					<Col xs={12} sm={6} lg={5} className="text-center px-5">
-						<img src={teamImg} alt="create team" className="mw-100" />
+					<Col xs={12} sm={7} lg={5} className="text-center px-5">
+						<img src={teamImg} alt="create team" className="mw-100 my-3" />
 					</Col>
 
 					<Col xs={12} lg={7}>
-						<Row className="justify-content-center">
-							<Col as="h4" xs={12} className="text-center my-4">
+						<Row className="justify-content-center my-3">
+							<Col as="h4" xs={12} className="text-center mb-4">
 								Create teams for easier organization
 							</Col>
 

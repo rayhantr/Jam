@@ -5,6 +5,7 @@ import { Card, Col, Row } from "react-bootstrap";
 import BtnIcon from "components/Buttons/BtnIcon";
 import { Link } from "react-router-dom";
 import ChipGroup from "components/Chip/ChipGroup";
+import Sticky from "react-stickynode";
 
 function LinearProgressWithLabel(props) {
 	return (
@@ -23,7 +24,7 @@ const Panel1 = () => {
 	const categories = ["Web Development", "Android Development", "UI/UX Design", "WordPress"];
 
 	const chipDelete = () => {
-		console.info("Clicked");
+		console.info("Chip Delete");
 	};
 
 	return (
@@ -76,21 +77,23 @@ const Panel1 = () => {
 					</a>
 				</Card.Body>
 			</Card>
-			<Card className="sticky-top-2">
-				<Card.Body>
-					<Row className="align-items-center">
-						<Col as="h5" className="mb-0">
-							Category
-						</Col>
-						<Col xs="auto">
-							<BtnIcon iconType="edit" />
-						</Col>
-					</Row>
-					<div className="mt-3">
-						<ChipGroup itemList={categories} size="small" onDelete={chipDelete} />
-					</div>
-				</Card.Body>
-			</Card>
+			<Sticky top="#topNav" innerActiveClass="mt-3" enabled={true} innerZ={1200} bottomBoundary="#main-content">
+				<Card>
+					<Card.Body>
+						<Row className="align-items-center">
+							<Col as="h5" className="mb-0">
+								Category
+							</Col>
+							<Col xs="auto">
+								<BtnIcon iconType="edit" />
+							</Col>
+						</Row>
+						<div className="mt-3">
+							<ChipGroup itemList={categories} size="small" onDelete={chipDelete} />
+						</div>
+					</Card.Body>
+				</Card>
+			</Sticky>
 		</>
 	);
 };

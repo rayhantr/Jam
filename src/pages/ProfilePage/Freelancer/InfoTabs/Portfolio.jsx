@@ -5,25 +5,6 @@ import BtnIcon from "components/Buttons/BtnIcon";
 import ModalForm from "components/Modal/ModalForm";
 import EmptyAdd from "components/EmptyAdd/EmptyAdd";
 
-const FormFields = () => {
-	return (
-		<Row className="align-items-end">
-			<Col xs={12} className="mb-3">
-				<Form.Group controlId="portfolioImg">
-					<Form.Label>Add Image</Form.Label>
-					<Form.Control type="text" name="portfolioImg" />
-				</Form.Group>
-			</Col>
-			<Col xs={12}>
-				<Form.Group controlId="title">
-					<Form.Label>Add Title</Form.Label>
-					<Form.Control type="text" name="title" />
-				</Form.Group>
-			</Col>
-		</Row>
-	);
-};
-
 const Portfolio = ({ portfolioList, publicView }) => {
 	// Items to show per page
 	const itemsPerPage = 3;
@@ -46,26 +27,37 @@ const Portfolio = ({ portfolioList, publicView }) => {
 	// 	setModalProps({ open: true, action: "Edit" });
 	// };
 
-	const PortfolioCard = () => {
+	const renderFormFields = (
+		<Row className="align-items-end">
+			<Col xs={12} className="mb-3">
+				<Form.Group controlId="portfolioImg">
+					<Form.Label>Add Image</Form.Label>
+					<Form.Control type="text" name="portfolioImg" />
+				</Form.Group>
+			</Col>
+			<Col xs={12}>
+				<Form.Group controlId="title">
+					<Form.Label>Add Title</Form.Label>
+					<Form.Control type="text" name="title" />
+				</Form.Group>
+			</Col>
+		</Row>
+	);
+
+	const renderPortfolioCard = portfolioList.slice((page - 1) * itemsPerPage, page * itemsPerPage).map((portfolio) => {
 		return (
-			<>
-				{portfolioList.slice((page - 1) * itemsPerPage, page * itemsPerPage).map((portfolio) => {
-					return (
-						<Col xs={12} sm={6} md={6} lg={4} key={portfolio.id} className="portfolio-card mb-3 mb-lg-0">
-							<Card>
-								<Ratio aspectRatio="4x3">
-									<Card.Img variant="top" src="https://www.kimbino.ng/images/no-img.jpg" />
-								</Ratio>
-								<Card.Body>
-									<Card.Title className="colored">{portfolio.title}</Card.Title>
-								</Card.Body>
-							</Card>
-						</Col>
-					);
-				})}
-			</>
+			<Col xs={12} sm={6} md={6} lg={4} key={portfolio.id} className="portfolio-card mb-3 mb-lg-0">
+				<Card>
+					<Ratio aspectRatio="4x3">
+						<Card.Img variant="top" src="https://www.kimbino.ng/images/no-img.jpg" />
+					</Ratio>
+					<Card.Body>
+						<Card.Title className="colored">{portfolio.title}</Card.Title>
+					</Card.Body>
+				</Card>
+			</Col>
 		);
-	};
+	});
 
 	return (
 		<>
@@ -81,7 +73,7 @@ const Portfolio = ({ portfolioList, publicView }) => {
 						</Col>
 					) : (
 						<>
-							<PortfolioCard />
+							{renderPortfolioCard}
 							<Pagination count={nooOfPages} page={page} onChange={handleChange} defaultPage={1} shape="rounded" color="secondary" size="small" className="d-flex justify-content-center mt-lg-3" />
 						</>
 					)}
@@ -89,7 +81,7 @@ const Portfolio = ({ portfolioList, publicView }) => {
 			</Card>
 			{/* Modal */}
 			<ModalForm show={modalProps.open} onHide={handleClose} action={modalProps.action} title="Portfolio">
-				<FormFields />
+				{renderFormFields}
 			</ModalForm>
 		</>
 	);

@@ -4,19 +4,6 @@ import BtnIcon from "components/Buttons/BtnIcon";
 import ModalForm from "components/Modal/ModalForm";
 import ChipGroup from "components/Chip/ChipGroup";
 
-const FormFields = () => {
-	return (
-		<Row className="align-items-end">
-			<Col xs={12}>
-				<Form.Group controlId="skills">
-					<Form.Label>Your Skills</Form.Label>
-					<Form.Control type="text" name="skills" />
-				</Form.Group>
-			</Col>
-		</Row>
-	);
-};
-
 const Skills = ({ skills, publicView }) => {
 	// Modal Control
 	const [modalProps, setModalProps] = useState({ open: false, action: "" });
@@ -26,6 +13,18 @@ const Skills = ({ skills, publicView }) => {
 		setModalProps({ open: true, action: "Edit" });
 	};
 
+	// modal field forms
+	const renderFormFields = (
+		<Row className="align-items-end">
+			<Col xs={12}>
+				<Form.Group controlId="skills">
+					<Form.Label>Your Skills</Form.Label>
+					<Form.Control type="text" name="skills" />
+				</Form.Group>
+			</Col>
+		</Row>
+	);
+
 	return (
 		<>
 			<Card body className="bs-dim">
@@ -34,7 +33,7 @@ const Skills = ({ skills, publicView }) => {
 			</Card>
 			{/* Modal */}
 			<ModalForm show={modalProps.open} onHide={handleClose} action={modalProps.action} title="Skills">
-				<FormFields />
+				{renderFormFields}
 			</ModalForm>
 		</>
 	);

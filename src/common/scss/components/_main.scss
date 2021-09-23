@@ -1,9 +1,10 @@
 html {
-	font-size: 14px;
+	font-size: $font-size;
 }
 
 body {
 	font-family: $font-family;
+	color: #393f49;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background: $color-body;
@@ -19,8 +20,49 @@ code {
 
 hr {
 	height: 0.125rem !important;
-	background-color: $blue-light;
+	background-color: $color-blue-light;
 	opacity: 1;
+}
+
+.card:last-child {
+	margin-bottom: 0 !important;
+}
+
+.z-index-high {
+	z-index: 1001;
+}
+
+.z-index {
+	&-900 {
+		z-index: 900 !important;
+	}
+	&-901 {
+		z-index: 901 !important;
+	}
+	&-1500 {
+		z-index: 1500 !important;
+	}
+	&-2000 {
+		z-index: 2000 !important;
+	}
+	&-2050 {
+		z-index: 2050 !important;
+	}
+	&-2100 {
+		z-index: 2100 !important;
+	}
+}
+
+.overflow {
+	&-y {
+		&-auto {
+			overflow-y: auto;
+		}
+	}
+}
+
+.sticky-top {
+	position: sticky;
 }
 
 .sticky-top-2 {
@@ -30,46 +72,81 @@ hr {
 }
 
 .bx-2 {
-	border-top: 0.125rem solid $blue-light;
-	border-bottom: 0.125rem solid $blue-light;
+	border-top: 0.125rem solid $color-blue-light;
+	border-bottom: 0.125rem solid $color-blue-light;
 }
 
 .bb-2 {
-	border-bottom: 0.125rem solid $blue-light;
+	border-bottom: 0.125rem solid $color-blue-light;
 }
 
-.text-gray-dark {
-	color: #3f4254;
+.text {
+	&-gray-dark {
+		color: #3f4254;
+	}
+	&-gray-light {
+		// color: #a1a1a1;
+		color: #7d93b2 !important;
+	}
+	&-primary {
+		color: $color-secondary;
+	}
+	&-secondary {
+		color: $color-primary;
+	}
+	&-white {
+		color: white;
+	}
+	&-danger {
+		color: $color-danger;
+	}
 }
 
-.text-gray-light {
-	// color: #7d93b2;
-	color: #a1a1a1;
+.bg {
+	&-primary {
+		&-light {
+			background-color: $color-primary-light !important;
+		}
+		&-gradient {
+			background: $lgr-primary-light;
+			&-p2s {
+				background: $lgr-p2s;
+			}
+		}
+	}
+	&-secondary-light {
+		background-color: $color-secondary-light;
+	}
 }
 
-.text-primary {
-	color: $color-secondary;
+.bs {
+	&-dim {
+		box-shadow: 0 0 35px 0 rgba(154, 161, 171, 0.15);
+	}
+	&-400 {
+		box-shadow: $box-shadow-400 !important;
+	}
+	&-600 {
+		box-shadow: $box-shadow-600;
+	}
+	&-200 {
+		box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+	}
 }
 
-.text-secondary {
-	color: $color-primary;
-}
-
-.bs-dim {
-	box-shadow: 0 0 35px 0 rgba(154, 161, 171, 0.15);
-}
-
-.bs-600 {
-	box-shadow: $box-shadow-600;
+.rounded {
+	&-4 {
+		border-radius: 0.5em !important;
+	}
 }
 
 .bdr-light-primary {
-	border: 2px solid rgba($color: $color-primary, $alpha: 0.2);
+	border: 2px solid $color-primary-light;
 	border-radius: $border-radius;
 }
 
 .bdr-light-secondary {
-	border: 2px solid rgba($color: $color-secondary, $alpha: 0.2);
+	border: 2px solid $color-secondary-light;
 	border-radius: $border-radius;
 }
 
@@ -246,6 +323,15 @@ hr {
 	}
 }
 
+// .MuiListItem-root {
+// 	&:first-child {
+// 		margin-top: 0 !important;
+// 	}
+// 	&:last-child {
+// 		margin-bottom: 0 !important;
+// 	}
+// }
+
 // avatar
 .large {
 	width: 5rem !important;
@@ -258,6 +344,7 @@ hr {
 }
 
 .auto {
+	aspect-ratio: 1/1;
 	width: 100% !important;
 	height: 100% !important;
 }
@@ -306,22 +393,30 @@ hr {
 	border-bottom-right-radius: 0.25rem;
 }
 
-// Scrollbar
-::-webkit-scrollbar {
-	width: 5px;
-}
+// ===== Scrollbar CSS =====
 
-/* Track */
-::-webkit-scrollbar-track {
-	background: #f1f1f1;
-}
+// Firefox
+* {
+	$scrollbar-width: 0.8rem;
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-	background: #888;
-}
+	scrollbar-width: auto;
+	scrollbar-color: $color-secondary $color-body;
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-	background: #555;
+	// Chrome, Edge, and Safari
+	&::-webkit-scrollbar {
+		width: $scrollbar-width;
+		&-track {
+			background: $color-body;
+		}
+
+		&-thumb {
+			background-color: $color-secondary;
+			border-radius: calc(#{$scrollbar-width} / 2);
+			border: 2px solid $color-body;
+
+			&:hover {
+				background: rgba($color: $color-secondary, $alpha: 0.8);
+			}
+		}
+	}
 }

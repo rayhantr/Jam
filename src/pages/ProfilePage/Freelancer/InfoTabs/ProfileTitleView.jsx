@@ -3,8 +3,17 @@ import { Row, Col, Card, Form } from "react-bootstrap";
 import BtnIcon from "components/Buttons/BtnIcon";
 import ModalForm from "components/Modal/ModalForm";
 
-const FormFields = () => {
-	return (
+const ProfileTitleView = ({ activeUser, publicView }) => {
+	// Modal Control
+	const [modalProps, setModalProps] = useState({ open: false, action: "" });
+
+	const handleClose = () => setModalProps({ open: false });
+	const editHandleShow = () => {
+		setModalProps({ open: true, action: "Edit" });
+	};
+
+	// modal field forms
+	const renderFormFields = (
 		<Row className="align-items-end">
 			<Col xs={12} className="mb-3">
 				<Form.Group controlId="profileTitle">
@@ -26,16 +35,6 @@ const FormFields = () => {
 			</Col>
 		</Row>
 	);
-};
-
-const ProfileTitleView = ({ activeUser, publicView }) => {
-	// Modal Control
-	const [modalProps, setModalProps] = useState({ open: false, action: "" });
-
-	const handleClose = () => setModalProps({ open: false });
-	const editHandleShow = () => {
-		setModalProps({ open: true, action: "Edit" });
-	};
 
 	return (
 		<>
@@ -49,7 +48,7 @@ const ProfileTitleView = ({ activeUser, publicView }) => {
 			</Card>
 			{/* Modal */}
 			<ModalForm show={modalProps.open} onHide={handleClose} action={modalProps.action} title="Title & Overview">
-				<FormFields />
+				{renderFormFields}
 			</ModalForm>
 		</>
 	);

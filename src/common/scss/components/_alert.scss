@@ -18,12 +18,8 @@
 		h5,
 		h6 {
 			color: $color-secondary;
+			font-weight: bold;
 		}
-	}
-
-	.fdv {
-		background-color: aqua;
-		height: 100%;
 	}
 }
 
@@ -34,11 +30,7 @@
 	&-title {
 		background-image: $lgr-primary-light;
 
-		h4,
-		h5,
-		h6 {
-			color: $color-secondary;
-			font-weight: bold;
-		}
+		color: $color-secondary;
+		font-weight: bold;
 	}
 }

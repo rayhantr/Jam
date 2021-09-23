@@ -1,9 +1,10 @@
 import { createTheme } from "@material-ui/core/styles";
 
-const globalCss = {
+export const globalCss = {
 	fontSize: "1rem",
 	lineHeight: "1.5",
 	pTb: "0.375rem",
+	colorBody: "#fafbfe",
 };
 
 const MaterialTheme = createTheme({
@@ -40,27 +41,28 @@ const MaterialTheme = createTheme({
 			root: {
 				fontSize: globalCss.fontSize,
 				lineHeight: globalCss.lineHeight,
-				paddingTop: `calc(${globalCss.pTb} + "1px")`,
-				paddingBottom: `calc(${globalCss.pTb} + "1px")`,
+				paddingTop: `calc(${globalCss.pTb} + 1px)`,
+				paddingBottom: `calc(${globalCss.pTb} + 1px)`,
 				textTransform: "capitalize",
+				minWidth: "auto",
 			},
 		},
 
 		// list change
-		MuiListItem: {
-			root: {
-				paddingTop: "0.5rem",
-				paddingBottom: "0.5rem",
-				borderRadius: globalCss.pTb,
-			},
-		},
+		// MuiListItem: {
+		// 	root: {
+		// 		paddingTop: "0.5rem",
+		// 		paddingBottom: "0.5rem",
+		// 		borderRadius: globalCss.pTb,
+		// 	},
+		// },
 
-		MuiListItemIcon: {
-			root: {
-				minWidth: "1.3rem",
-				marginRight: "1rem",
-			},
-		},
+		// MuiListItemIcon: {
+		// 	root: {
+		// 		minWidth: "1.3rem",
+		// 		marginRight: "1rem",
+		// 	},
+		// },
 
 		MuiTab: {
 			root: {
@@ -89,7 +91,7 @@ const MaterialTheme = createTheme({
 
 		MuiChip: {
 			root: {
-				borderRadius: "0.25rem",
+				borderRadius: "0.5em",
 				height: "auto",
 				fontSize: globalCss.fontSize,
 				lineHeight: globalCss.lineHeight,
@@ -134,6 +136,12 @@ const MaterialTheme = createTheme({
 			},
 			bar: {
 				borderRadius: "0.5rem",
+			},
+		},
+
+		MuiBackdrop: {
+			root: {
+				backgroundColor: "rgba(50, 57, 66, .9)",
 			},
 		},
 	},

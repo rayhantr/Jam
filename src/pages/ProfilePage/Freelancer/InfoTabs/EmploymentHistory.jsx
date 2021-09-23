@@ -4,8 +4,37 @@ import EmptyAdd from "components/EmptyAdd/EmptyAdd";
 import BtnIcon from "components/Buttons/BtnIcon";
 import ModalForm from "components/Modal/ModalForm";
 
-const FormFields = () => {
+const Employment = ({ empHistory }) => {
 	return (
+		<Col xs={12}>
+			<div className="employment-history">
+				<div className="employment-details ps-3">
+					<h6>
+						<span className="emp-designation">{empHistory.designation}</span> | <span className="emp-place">{empHistory.institute}</span>
+					</h6>
+					<small className="emp-duration">
+						{empHistory.startDate} - {empHistory.endDate}
+					</small>
+					<p className="emp-details mt-3">{empHistory.details}</p>
+				</div>
+			</div>
+		</Col>
+	);
+};
+
+const EmploymentHistory = ({ employmentHistory, publicView }) => {
+	const [modalProps, setModalProps] = useState({ open: false, action: "" });
+
+	const handleClose = () => setModalProps({ open: false });
+	const addHandleShow = () => {
+		setModalProps({ open: true, action: "Add" });
+	};
+	// const editHandleShow = () => {
+	// 	setModalProps({ open: true, action: "Edit" });
+	// };
+
+	// modal field forms
+	const renderFormFields = (
 		<Row className="align-items-end">
 			<Col xs={12} className="mb-3">
 				<Form.Group controlId="designation">
@@ -39,36 +68,6 @@ const FormFields = () => {
 			</Col>
 		</Row>
 	);
-};
-
-const Employment = ({ empHistory }) => {
-	return (
-		<Col xs={12}>
-			<div className="employment-history">
-				<div className="employment-details ps-3">
-					<h6>
-						<span className="emp-designation">{empHistory.designation}</span> | <span className="emp-place">{empHistory.institute}</span>
-					</h6>
-					<small className="emp-duration">
-						{empHistory.startDate} - {empHistory.endDate}
-					</small>
-					<p className="emp-details mt-3">{empHistory.details}</p>
-				</div>
-			</div>
-		</Col>
-	);
-};
-
-const EmploymentHistory = ({ employmentHistory, publicView }) => {
-	const [modalProps, setModalProps] = useState({ open: false, action: "" });
-
-	const handleClose = () => setModalProps({ open: false });
-	const addHandleShow = () => {
-		setModalProps({ open: true, action: "Add" });
-	};
-	// const editHandleShow = () => {
-	// 	setModalProps({ open: true, action: "Edit" });
-	// };
 
 	return (
 		<>
@@ -95,7 +94,7 @@ const EmploymentHistory = ({ employmentHistory, publicView }) => {
 			</Col>
 			{/* Modal */}
 			<ModalForm show={modalProps.open} onHide={handleClose} action={modalProps.action} title="Employment History">
-				<FormFields />
+				{renderFormFields}
 			</ModalForm>
 		</>
 	);

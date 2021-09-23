@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Formik, Form } from "formik";
-import { Container, Row, Col, Button, Badge } from "react-bootstrap";
+import { Row, Col, Button, Badge } from "react-bootstrap";
 
 import { StepOne, StepTwo, StepThree, StepFour, StepFive, StepSix, StepSeven, StepEight, StepNine, StepTen, StepEleven, StepTwelve } from "./Forms";
 
@@ -107,83 +107,83 @@ const FinalForm = () => {
 	}
 
 	return (
-		<Container className="ms-form">
-			{activeStep === steps.length ? (
-				<RegistrationSuccess />
-			) : (
-				<Row>
-					{/* Step navigation */}
-					<Col as="ul" xs={4} className={`nav-steps list-unstyled d-none  ${isLastStep ? "d-none" : "d-md-block"}`}>
-						{steps.map((step, i) => {
-							return (
-								<li key={i} className={`${activeStep + 1 === step.key ? "active" : ""} ${step.isDone ? "done" : ""} ${i === 12 ? "d-none" : "d-block"} text-gray-light`}>
-									<Row className="nav-step-title gx-2">
-										<Col xs="auto">
-											<div className="step-icon p-2 text-center">{step.icon}</div>
-										</Col>
-										<Col>
-											<div className="step-label p-2">{step.label}</div>
-										</Col>
-									</Row>
-								</li>
-							);
-						})}
-					</Col>
+		// <Container className="ms-form">
+		activeStep === steps.length ? (
+			<RegistrationSuccess />
+		) : (
+			<Row>
+				{/* Step navigation */}
+				<Col as="ul" xs={4} className={`nav-steps list-unstyled d-none  ${isLastStep ? "d-none" : "d-md-block"}`}>
+					{steps.map((step, i) => {
+						return (
+							<li key={i} className={`${activeStep + 1 === step.key ? "active" : ""} ${step.isDone ? "done" : ""} ${i === 12 ? "d-none" : "d-block"} text-gray-light`}>
+								<Row className="nav-step-title gx-2">
+									<Col xs="auto">
+										<div className="step-icon p-2 text-center">{step.icon}</div>
+									</Col>
+									<Col>
+										<div className="step-label p-2">{step.label}</div>
+									</Col>
+								</Row>
+							</li>
+						);
+					})}
+				</Col>
 
-					{/* Step components */}
-					<Col md={isLastStep ? 12 : 8}>
-						<Formik initialValues={formInitialValues} validationSchema={currentValidationSchema} onSubmit={_handleSubmit}>
-							{({ isSubmitting, isValid, dirty }) => (
-								<Form id={formId}>
-									<Row className="step-components ms-md-1 g-0">
-										{/* Step Heading */}
-										<Col xs={12} className="step-info p-3">
-											<h1 className="text-gray-dark">
-												{steps[activeStep].label}
-												{steps[activeStep].icon}
-											</h1>
-											{/* Step counter */}
-											<h5>
-												<Badge bg="color-two">
-													Step {activeStep + 1} of {steps.length - 1}
-												</Badge>
-											</h5>
-										</Col>
-										{/* Components Render */}
-										<Col xs={12} className="my-3">
-											{_renderStepContent(activeStep)}
-										</Col>
-										{/* Back & Next Button */}
-										<Col xs={12} className="my-4">
-											<div className={`nav-buttons row ${activeStep === 0 ? "justify-content-end" : "justify-content-between"}`}>
-												{activeStep !== 0 && (
-													<Col xs={6} lg={3}>
-														<Button type="button" variant="back" className="btn-form col-12" onClick={_handleBack}>
-															<span>
-																Back
-																<i className="fas fa-arrow-left"></i>
-															</span>
-														</Button>
-													</Col>
-												)}
+				{/* Step components */}
+				<Col md={isLastStep ? 12 : 8}>
+					<Formik initialValues={formInitialValues} validationSchema={currentValidationSchema} onSubmit={_handleSubmit}>
+						{({ isSubmitting, isValid, dirty }) => (
+							<Form id={formId}>
+								<Row className="step-components ms-md-1 g-0">
+									{/* Step Heading */}
+									<Col xs={12} className="step-info p-3">
+										<h1 className="text-gray-dark">
+											{steps[activeStep].label}
+											{steps[activeStep].icon}
+										</h1>
+										{/* Step counter */}
+										<h5>
+											<Badge bg="color-two">
+												Step {activeStep + 1} of {steps.length - 1}
+											</Badge>
+										</h5>
+									</Col>
+									{/* Components Render */}
+									<Col xs={12} className="my-3">
+										{_renderStepContent(activeStep)}
+									</Col>
+									{/* Back & Next Button */}
+									<Col xs={12} className="my-4">
+										<div className={`nav-buttons row ${activeStep === 0 ? "justify-content-end" : "justify-content-between"}`}>
+											{activeStep !== 0 && (
 												<Col xs={6} lg={3}>
-													<Button type="submit" variant={`${!(isValid && dirty) ? "next" : "next-go"}`} className="btn-form col-12" disabled={!(isValid && dirty) || isSubmitting}>
+													<Button type="button" variant="back" className="btn-form col-12" onClick={_handleBack}>
 														<span>
-															{isLastStep ? "Submit" : reviewStep ? "Review" : "Next"}
-															<i className="fas fa-arrow-right"></i>
+															Back
+															<i className="fas fa-arrow-left"></i>
 														</span>
 													</Button>
 												</Col>
-											</div>
-										</Col>
-									</Row>
-								</Form>
-							)}
-						</Formik>
-					</Col>
-				</Row>
-			)}
-		</Container>
+											)}
+											<Col xs={6} lg={3}>
+												<Button type="submit" variant={`${!(isValid && dirty) ? "next" : "next-go"}`} className="btn-form col-12" disabled={!(isValid && dirty) || isSubmitting}>
+													<span>
+														{isLastStep ? "Submit" : reviewStep ? "Review" : "Next"}
+														<i className="fas fa-arrow-right"></i>
+													</span>
+												</Button>
+											</Col>
+										</div>
+									</Col>
+								</Row>
+							</Form>
+						)}
+					</Formik>
+				</Col>
+			</Row>
+		)
+		// </Container>
 	);
 };
 

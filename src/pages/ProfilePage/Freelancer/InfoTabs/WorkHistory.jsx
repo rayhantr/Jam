@@ -55,31 +55,19 @@ const WorkHistory = ({ completedJobList, inProgressJobList }) => {
 	};
 
 	// Completed jobs with detailed list
-	const CompletedJobs = () => {
-		return (
-			<>
-				{completedJobList.slice((compJobPage - 1) * itemsPerPage, compJobPage * itemsPerPage).map((jobItem) => {
-					return <JobCard key={jobItem.jobID} title={jobItem.title} date={jobItem.completionDate} rating={jobItem.rating} comment={jobItem.comment} fee={jobItem.fee} feeType={jobItem.feeType} />;
-				})}
-			</>
-		);
-	};
+	const completedJobs = completedJobList.slice((compJobPage - 1) * itemsPerPage, compJobPage * itemsPerPage).map((jobItem) => {
+		return <JobCard key={jobItem.jobID} title={jobItem.title} date={jobItem.completionDate} rating={jobItem.rating} comment={jobItem.comment} fee={jobItem.fee} feeType={jobItem.feeType} />;
+	});
 
 	// In Progress jobs with detailed list
-	const InProgressJobs = () => {
+	const inProgressJobs = inProgressJobList.slice((ipJobPage - 1) * itemsPerPage, ipJobPage * itemsPerPage).map((jobItem) => {
 		return (
-			<>
-				{inProgressJobList.slice((ipJobPage - 1) * itemsPerPage, ipJobPage * itemsPerPage).map((jobItem) => {
-					return (
-						<div key={jobItem.jobID} className="mb-3">
-							<h6> title: {jobItem.title} </h6>
-							<small>date: {jobItem.completionDate}</small>
-						</div>
-					);
-				})}
-			</>
+			<div key={jobItem.jobID} className="mb-3">
+				<h6> title: {jobItem.title} </h6>
+				<small>date: {jobItem.completionDate}</small>
+			</div>
 		);
-	};
+	});
 
 	return (
 		<Card body className="bs-dim">
@@ -94,7 +82,7 @@ const WorkHistory = ({ completedJobList, inProgressJobList }) => {
 				<TabPanel value={value} index={0} dir={theme.direction}>
 					{completedJobList.length !== 0 ? (
 						<>
-							<CompletedJobs />
+							{completedJobs}
 							<Pagination
 								count={compJobNoOfPages}
 								page={compJobPage}
@@ -114,7 +102,7 @@ const WorkHistory = ({ completedJobList, inProgressJobList }) => {
 				<TabPanel value={value} index={1} dir={theme.direction}>
 					{inProgressJobList.length !== 0 ? (
 						<>
-							<InProgressJobs />
+							{inProgressJobs}
 							<Pagination
 								count={ipJobNoOfPages}
 								page={ipJobPage}

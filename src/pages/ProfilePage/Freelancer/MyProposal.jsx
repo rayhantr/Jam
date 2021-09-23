@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Row, Col, Card } from "react-bootstrap";
 import { Chip, Tabs, Tab, Button } from "@material-ui/core";
 import { useTheme } from "@material-ui/core/styles";
 import SwipeableViews from "react-swipeable-views";
@@ -107,7 +107,8 @@ const MyProposal = () => {
 		setValue(index);
 	};
 	return (
-		<Container className="my-2 my-md-5">
+		// <Container className="my-2 my-md-5">
+		<>
 			<h5 className="mb-3 title-primary">My Proposals</h5>
 			{/* Tab View */}
 			<Tabs className="mb-3" value={value} onChange={tabChange} indicatorColor="primary" textColor="primary" aria-label="Work History Tabs">
@@ -140,7 +141,8 @@ const MyProposal = () => {
 					</Button>
 				</Col>
 			</Row>
-		</Container>
+		</>
+		// </Container>
 	);
 };
 

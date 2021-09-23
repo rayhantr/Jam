@@ -14,7 +14,7 @@ const TaxInfo = () => {
 				<Card.Title className="row g-0 justify-content-between align-items-center">Tax Residence</Card.Title>
 				<hr />
 
-				<InfoBlock title={<h5 className="mb-0">This address will be displayed on invoices</h5>}>
+				<InfoBlock title="This address will be displayed on invoices" tagType="h6">
 					<InfoBlock.Body>
 						{/* Checkboxes */}
 						<Row className="g-3">

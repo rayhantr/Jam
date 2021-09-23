@@ -3,19 +3,6 @@ import { Row, Col, Card, Form } from "react-bootstrap";
 import BtnIcon from "components/Buttons/BtnIcon";
 import ModalForm from "components/Modal/ModalForm";
 
-const FormFields = () => {
-	return (
-		<Row className="align-items-end">
-			<Col xs={12}>
-				<Form.Group controlId="availableHours">
-					<Form.Label>Your available hours in a week</Form.Label>
-					<Form.Control type="text" name="availableHours" />
-				</Form.Group>
-			</Col>
-		</Row>
-	);
-};
-
 const AvailableHours = ({ activeUser, publicView }) => {
 	const [modalProps, setModalProps] = useState({ open: false, action: "" });
 
@@ -26,6 +13,18 @@ const AvailableHours = ({ activeUser, publicView }) => {
 	const editHandleShow = () => {
 		setModalProps({ open: true, action: "Edit" });
 	};
+
+	// modal field forms
+	const renderFormFields = (
+		<Row className="align-items-end">
+			<Col xs={12}>
+				<Form.Group controlId="availableHours">
+					<Form.Label>Your available hours in a week</Form.Label>
+					<Form.Control type="text" name="availableHours" />
+				</Form.Group>
+			</Col>
+		</Row>
+	);
 
 	return (
 		<>
@@ -40,7 +39,7 @@ const AvailableHours = ({ activeUser, publicView }) => {
 			</Card>
 			{/* Modal */}
 			<ModalForm show={modalProps.open} onHide={handleClose} action={modalProps.action} title="Available Hours">
-				<FormFields />
+				{renderFormFields}
 			</ModalForm>
 		</>
 	);

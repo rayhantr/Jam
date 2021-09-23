@@ -112,7 +112,33 @@
 	}
 }
 
+.btn {
+	&-primary-light {
+		background-color: $color-primary-light !important;
+		color: $color-secondary !important;
+
+		&:hover {
+			background-color: rgba($color-primary, 0.4) !important;
+		}
+	}
+	&-danger-light {
+		background-color: rgba($color: $color-danger, $alpha: 0.2) !important;
+		color: $color-danger !important;
+
+		&:hover {
+			background-color: rgba($color: $color-danger, $alpha: 0.3) !important;
+		}
+	}
+}
+
 .btn-icon-delete {
-	background-color: $color-error;
-	border-color: $color-error;
+	background-color: $color-danger;
+	border-color: $color-danger;
+}
+
+// material button
+.MuiButton-root {
+	i {
+		font-size: 1rem !important;
+	}
 }
