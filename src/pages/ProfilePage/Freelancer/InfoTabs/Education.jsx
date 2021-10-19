@@ -17,38 +17,40 @@ const Education = ({ education, publicView }) => {
 
 	// modal field forms
 	const renderFormFields = (
-		<Row className="align-items-end">
-			<Col xs={12} className="mb-3">
-				<Form.Group controlId="instituteName">
-					<Form.Label>Institute Name</Form.Label>
-					<Form.Control type="text" name="instituteName" />
-				</Form.Group>
-			</Col>
-			<Col xs={12} className="mb-3">
-				<Form.Group controlId="degree">
-					<Form.Label>Degree</Form.Label>
-					<Form.Control type="text" name="degree" />
-				</Form.Group>
-			</Col>
-			<Col xs={12} className="mb-3">
-				<Form.Group controlId="department">
-					<Form.Label>Department</Form.Label>
-					<Form.Control type="text" name="department" />
-				</Form.Group>
-			</Col>
-			<Col xs={6}>
-				<Form.Group controlId="startDate">
-					<Form.Label>Start Date</Form.Label>
-					<Form.Control type="text" name="startDate" />
-				</Form.Group>
-			</Col>
-			<Col xs={6}>
-				<Form.Group controlId="endDate">
-					<Form.Label>End Date</Form.Label>
-					<Form.Control type="text" name="endDate" />
-				</Form.Group>
-			</Col>
-		</Row>
+		<Form>
+			<Row className="align-items-end">
+				<Col xs={12} className="mb-3">
+					<Form.Group controlId="instituteName">
+						<Form.Label>Institute Name</Form.Label>
+						<Form.Control type="text" name="instituteName" />
+					</Form.Group>
+				</Col>
+				<Col xs={12} className="mb-3">
+					<Form.Group controlId="degree">
+						<Form.Label>Degree</Form.Label>
+						<Form.Control type="text" name="degree" />
+					</Form.Group>
+				</Col>
+				<Col xs={12} className="mb-3">
+					<Form.Group controlId="department">
+						<Form.Label>Department</Form.Label>
+						<Form.Control type="text" name="department" />
+					</Form.Group>
+				</Col>
+				<Col xs={6}>
+					<Form.Group controlId="startDate">
+						<Form.Label>Start Date</Form.Label>
+						<Form.Control type="text" name="startDate" />
+					</Form.Group>
+				</Col>
+				<Col xs={6}>
+					<Form.Group controlId="endDate">
+						<Form.Label>End Date</Form.Label>
+						<Form.Control type="text" name="endDate" />
+					</Form.Group>
+				</Col>
+			</Row>
+		</Form>
 	);
 
 	return (

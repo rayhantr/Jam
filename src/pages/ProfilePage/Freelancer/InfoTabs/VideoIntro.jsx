@@ -18,14 +18,16 @@ const VideoIntro = ({ videoIntro, publicView }) => {
 
 	// modal field forms
 	const renderFormFields = (
-		<Row className="align-items-end">
-			<Col xs={12} className="mb-3">
-				<Form.Group controlId="videoIntro">
-					<Form.Label>Add a video introduction</Form.Label>
-					<Form.Control type="text" name="videoIntro" />
-				</Form.Group>
-			</Col>
-		</Row>
+		<Form>
+			<Row className="align-items-end">
+				<Col xs={12} className="mb-3">
+					<Form.Group controlId="videoIntro">
+						<Form.Label>Add a video introduction</Form.Label>
+						<Form.Control type="text" name="videoIntro" />
+					</Form.Group>
+				</Col>
+			</Row>
+		</Form>
 	);
 
 	return (

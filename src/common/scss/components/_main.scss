@@ -24,6 +24,10 @@ hr {
 	opacity: 1;
 }
 
+a:hover {
+	color: inherit;
+}
+
 .card:last-child {
 	margin-bottom: 0 !important;
 }
@@ -38,6 +42,9 @@ hr {
 	}
 	&-901 {
 		z-index: 901 !important;
+	}
+	&-1000 {
+		z-index: 1000 !important;
 	}
 	&-1500 {
 		z-index: 1500 !important;
@@ -57,6 +64,11 @@ hr {
 	&-y {
 		&-auto {
 			overflow-y: auto;
+		}
+	}
+	&-x {
+		&-auto {
+			overflow-x: auto;
 		}
 	}
 }
@@ -81,12 +93,16 @@ hr {
 }
 
 .text {
-	&-gray-dark {
-		color: #3f4254;
-	}
-	&-gray-light {
-		// color: #a1a1a1;
-		color: #7d93b2 !important;
+	&-gray {
+		&-dark {
+			color: #3f4254;
+		}
+		&-light {
+			color: #7d93b2 !important;
+		}
+		&-200 {
+			color: #b5c3d6 !important;
+		}
 	}
 	&-primary {
 		color: $color-secondary;
@@ -115,7 +131,21 @@ hr {
 		}
 	}
 	&-secondary-light {
-		background-color: $color-secondary-light;
+		background-color: $color-secondary-light !important;
+	}
+	&-gray {
+		&-light {
+			background-color: #7d93b2 !important;
+		}
+		&-200 {
+			background-color: #ecf1f5 !important;
+		}
+		&-400 {
+			background-color: #dfe8f0 !important;
+		}
+		&-table {
+			background-color: #f4f9fd;
+		}
 	}
 }
 
@@ -132,15 +162,83 @@ hr {
 	&-200 {
 		box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
 	}
+	&-light {
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+	}
+	&-hover {
+		box-shadow: 0 8px 15px 1px rgba($color: $color-primary, $alpha: 0.2);
+	}
 }
 
+.ls {
+	&-sm {
+		letter-spacing: 1.3px;
+	}
+	&-1 {
+		letter-spacing: 0.5px;
+	}
+}
+
+// height
+.h {
+	&-0 {
+		height: 0 !important;
+	}
+}
+.min {
+	&-h {
+		&-auto {
+			min-height: auto !important;
+		}
+	}
+}
+
+// font
+.fs {
+	&-large {
+		font-size: 5rem !important;
+	}
+}
+.fw {
+	&-600 {
+		font-weight: 600;
+	}
+}
+
+// padding
+.p {
+	&-input {
+		padding-top: 0.75rem !important;
+		padding-bottom: 0.75rem !important;
+	}
+}
+
+// sizing
+.min {
+	&-h {
+		&-auto {
+			min-height: auto !important;
+		}
+	}
+}
+
+.opacity {
+	&-0 {
+		opacity: 0 !important;
+	}
+	&-1 {
+		opacity: 1 !important;
+	}
+}
+
+// borders
 .rounded {
 	&-4 {
 		border-radius: 0.5em !important;
 	}
 }
 
-.bdr-light-primary {
+.bdr-primary-light {
 	border: 2px solid $color-primary-light;
 	border-radius: $border-radius;
 }
@@ -148,6 +246,10 @@ hr {
 .bdr-light-secondary {
 	border: 2px solid $color-secondary-light;
 	border-radius: $border-radius;
+}
+
+.border-primary-light {
+	border-color: $color-primary-light !important;
 }
 
 .title-primary {
@@ -398,6 +500,7 @@ hr {
 // Firefox
 * {
 	$scrollbar-width: 0.8rem;
+	$scrollbar-height: 0.8rem;
 
 	scrollbar-width: auto;
 	scrollbar-color: $color-secondary $color-body;
@@ -405,6 +508,7 @@ hr {
 	// Chrome, Edge, and Safari
 	&::-webkit-scrollbar {
 		width: $scrollbar-width;
+		height: $scrollbar-height;
 		&-track {
 			background: $color-body;
 		}

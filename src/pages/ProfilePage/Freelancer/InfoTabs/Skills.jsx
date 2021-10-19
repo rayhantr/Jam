@@ -15,14 +15,16 @@ const Skills = ({ skills, publicView }) => {
 
 	// modal field forms
 	const renderFormFields = (
-		<Row className="align-items-end">
-			<Col xs={12}>
-				<Form.Group controlId="skills">
-					<Form.Label>Your Skills</Form.Label>
-					<Form.Control type="text" name="skills" />
-				</Form.Group>
-			</Col>
-		</Row>
+		<Form>
+			<Row className="align-items-end">
+				<Col xs={12}>
+					<Form.Group controlId="skills">
+						<Form.Label>Your Skills</Form.Label>
+						<Form.Control type="text" name="skills" />
+					</Form.Group>
+				</Col>
+			</Row>
+		</Form>
 	);
 
 	return (

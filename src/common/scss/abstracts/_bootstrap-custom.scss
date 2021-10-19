@@ -1,8 +1,36 @@
+// Bootstrap
+
+// color
 $primary: #00cad9;
 $secondary: #2d6478;
 
+// card
 $card-border-width: 0px;
 $dropdown-border-width: 0px;
 $border-radius: 0.5em;
 
+// custom
+$color-white: white;
+$color-gray: #777777;
+$color-body: #fafbfe;
+$color-light: #7d93b2;
+$color-danger: #dc004e;
+$color-gray-light: #a1a1a1;
+$color-blue-light: #ebeef9;
+$color-primary-light: rgba(
+	$color: $primary,
+	$alpha: 0.2,
+);
+$color-secondary-light: rgba(
+	$color: $secondary,
+	$alpha: 0.2,
+);
+
+// input
+$input-bg: $color-body;
+$input-placeholder-color: $color-light;
+$form-select-color: $color-light;
+$form-select-indicator-color: $color-light;
+
+// import
 @import "~bootstrap/scss/bootstrap";

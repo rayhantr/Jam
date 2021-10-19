@@ -8,13 +8,15 @@ import ChipGroup from "components/Chip/ChipGroup";
 import Sticky from "react-stickynode";
 
 function LinearProgressWithLabel(props) {
+	const { value, ...other } = props;
+
 	return (
 		<Row className="align-items-center g-3">
 			<Col>
-				<LinearProgress variant="determinate" {...props} />
+				<LinearProgress variant="determinate" value={value} {...other} />
 			</Col>
 			<Col xs="auto">
-				<Chip size="small" color="primary" label={`${Math.round(props.value)}%`} />
+				<Chip size="small" color="primary" label={`${Math.round(value)}%`} />
 			</Col>
 		</Row>
 	);

@@ -4,6 +4,7 @@ import { Pagination } from "@material-ui/lab";
 import BtnIcon from "components/Buttons/BtnIcon";
 import ModalForm from "components/Modal/ModalForm";
 import EmptyAdd from "components/EmptyAdd/EmptyAdd";
+import { Chip } from "@material-ui/core";
 
 const Portfolio = ({ portfolioList, publicView }) => {
 	// Items to show per page
@@ -28,20 +29,22 @@ const Portfolio = ({ portfolioList, publicView }) => {
 	// };
 
 	const renderFormFields = (
-		<Row className="align-items-end">
-			<Col xs={12} className="mb-3">
-				<Form.Group controlId="portfolioImg">
-					<Form.Label>Add Image</Form.Label>
-					<Form.Control type="text" name="portfolioImg" />
-				</Form.Group>
-			</Col>
-			<Col xs={12}>
-				<Form.Group controlId="title">
-					<Form.Label>Add Title</Form.Label>
-					<Form.Control type="text" name="title" />
-				</Form.Group>
-			</Col>
-		</Row>
+		<Form>
+			<Row className="align-items-end">
+				<Col xs={12} className="mb-3">
+					<Form.Group controlId="portfolioImg">
+						<Form.Label>Add Image</Form.Label>
+						<Form.Control type="text" name="portfolioImg" />
+					</Form.Group>
+				</Col>
+				<Col xs={12}>
+					<Form.Group controlId="title">
+						<Form.Label>Add Title</Form.Label>
+						<Form.Control type="text" name="title" />
+					</Form.Group>
+				</Col>
+			</Row>
+		</Form>
 	);
 
 	const renderPortfolioCard = portfolioList.slice((page - 1) * itemsPerPage, page * itemsPerPage).map((portfolio) => {
@@ -63,7 +66,11 @@ const Portfolio = ({ portfolioList, publicView }) => {
 		<>
 			<Card body className="bs-dim">
 				<Card.Title className="row g-0 justify-content-between align-items-center">
-					Portfolio ({portfolioList.length}){publicView ? null : <BtnIcon iconType="add" onClick={addHandleShow} />}
+					<Col>
+						Portfolio
+						<Chip label={portfolioList.length} className="ms-2 bg-primary-light text-secondary rounded-pill p-1 text-capitalize" size="small" />
+					</Col>
+					<Col xs="auto">{publicView ? null : <BtnIcon iconType="add" onClick={addHandleShow} />}</Col>
 				</Card.Title>
 				<Row className="mt-3">
 					{/* For empty portfolio show empty sign else show the portfolios available */}

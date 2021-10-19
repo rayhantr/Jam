@@ -29,20 +29,22 @@ const OtherExp = ({ otherExpList, publicView }) => {
 	// };
 
 	const renderFormFields = (
-		<Row className="align-items-end">
-			<Col xs={12} className="mb-3">
-				<Form.Group controlId="role">
-					<Form.Label>Your Role</Form.Label>
-					<Form.Control type="text" name="role" />
-				</Form.Group>
-			</Col>
-			<Col xs={12}>
-				<Form.Group controlId="about">
-					<Form.Label>About the Experience</Form.Label>
-					<Form.Control as="textarea" rows={4} name="about" />
-				</Form.Group>
-			</Col>
-		</Row>
+		<Form>
+			<Row className="align-items-end">
+				<Col xs={12} className="mb-3">
+					<Form.Group controlId="role">
+						<Form.Label>Your Role</Form.Label>
+						<Form.Control type="text" name="role" />
+					</Form.Group>
+				</Col>
+				<Col xs={12}>
+					<Form.Group controlId="about">
+						<Form.Label>About the Experience</Form.Label>
+						<Form.Control as="textarea" rows={4} name="about" />
+					</Form.Group>
+				</Col>
+			</Row>
+		</Form>
 	);
 
 	return (

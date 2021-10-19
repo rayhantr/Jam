@@ -17,21 +17,23 @@ const Languages = ({ languages, publicView }) => {
 
 	// modal field forms
 	const renderFormFields = (
-		<Row className="align-items-end">
-			<Col xs={6}>
-				<Form.Group controlId="languageName">
-					<Form.Label>Language Name</Form.Label>
-					<Form.Control type="text" name="languageName" />
-				</Form.Group>
-			</Col>
-			<Col xs={6}>
-				<Form.Select aria-label="Language-fluency">
-					<option>Fluency</option>
-					<option value="Native">Native</option>
-					<option value="Fluent">Fluent</option>
-				</Form.Select>
-			</Col>
-		</Row>
+		<Form>
+			<Row className="align-items-end">
+				<Col xs={6}>
+					<Form.Group controlId="languageName">
+						<Form.Label>Language Name</Form.Label>
+						<Form.Control type="text" name="languageName" />
+					</Form.Group>
+				</Col>
+				<Col xs={6}>
+					<Form.Select aria-label="Language-fluency">
+						<option>Fluency</option>
+						<option value="Native">Native</option>
+						<option value="Fluent">Fluent</option>
+					</Form.Select>
+				</Col>
+			</Row>
+		</Form>
 	);
 
 	return (

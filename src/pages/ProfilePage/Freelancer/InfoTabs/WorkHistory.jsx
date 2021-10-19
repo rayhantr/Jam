@@ -74,8 +74,22 @@ const WorkHistory = ({ completedJobList, inProgressJobList }) => {
 			<Card.Title className="row g-0 justify-content-between align-items-center">Work History</Card.Title>
 			{/* Tab View */}
 			<Tabs className="mb-3" value={value} onChange={tabChange} indicatorColor="primary" textColor="primary" aria-label="Work History Tabs">
-				<Tab label={`Completed Jobs (${completedJobList.length})`} />
-				<Tab label={`In Progress (${inProgressJobList.length})`} />
+				<Tab
+					label={
+						<h6 className="mb-0">
+							Completed Jobs
+							<Chip label={completedJobList.length} className="ms-2 bg-primary-light text-secondary rounded-pill p-1 text-capitalize" size="small" />
+						</h6>
+					}
+				/>
+				<Tab
+					label={
+						<h6 className="mb-0">
+							Completed Jobs
+							<Chip label={inProgressJobList.length} className="ms-2 bg-primary-light text-secondary rounded-pill p-1 text-capitalize" size="small" />
+						</h6>
+					}
+				/>
 			</Tabs>
 			{/* Swipe Animation */}
 			<SwipeableViews axis={theme.direction === "rtl" ? "x-reverse" : "x"} index={value} onChangeIndex={handleChangeIndex} slideStyle={{ overflow: "visible" }}>

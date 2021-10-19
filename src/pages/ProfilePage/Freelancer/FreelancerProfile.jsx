@@ -51,7 +51,7 @@ const FreelancerProfile = () => {
 		const getData = async () => {
 			try {
 				setUserInformation({ isLoading: true });
-				const response = await axios.get("http://localhost:8000/users/1");
+				const response = await axios.get("db.json");
 				// Set User data from API call
 				const userData = response.data;
 				// Set user information for each field

@@ -29,6 +29,7 @@ const ChatWindow = ({ username, roomname, socket }) => {
 			});
 			setMessages([...temp]);
 		});
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [socket]);
 
 	const sendData = () => {

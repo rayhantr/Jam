@@ -31,7 +31,7 @@ const Alert = (props) => {
 
 const Notify = (props) => {
 	return (
-		<Row className={`notify bdr-light-primary g-0 align-items-center ${props.className || ""}`}>
+		<Row className={`notify bdr-primary-light g-0 align-items-center ${props.className || ""}`}>
 			{props.icon && (
 				<Col xs="auto" className="notify-icon d-flex align-self-stretch align-items-center text-center p-3">
 					{props.icon}

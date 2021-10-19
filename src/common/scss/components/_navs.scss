@@ -40,15 +40,6 @@
 				}
 			}
 		}
-
-		.subNav-indicator {
-			font-size: 0.8rem;
-			transition: all 0.3s ease;
-
-			&.rotate {
-				transform: rotate(90deg);
-			}
-		}
 	}
 
 	&-bottom {
@@ -165,5 +156,23 @@
 	100% {
 		transform: scale(2.3);
 		opacity: 0;
+	}
+}
+
+.simplebar-track {
+	width: 7px !important;
+}
+
+.simplebar-scrollbar:before {
+	background-color: $color-secondary !important;
+	width: 4px;
+}
+
+.subNav-indicator {
+	font-size: 0.8rem;
+	transition: all 0.3s ease;
+
+	&.rotate {
+		transform: rotate(90deg);
 	}
 }

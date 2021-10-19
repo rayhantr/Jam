@@ -14,26 +14,28 @@ const ProfileTitleView = ({ activeUser, publicView }) => {
 
 	// modal field forms
 	const renderFormFields = (
-		<Row className="align-items-end">
-			<Col xs={12} className="mb-3">
-				<Form.Group controlId="profileTitle">
-					<Form.Label>Title</Form.Label>
-					<Form.Control type="text" name="profileTitle" />
-				</Form.Group>
-			</Col>
-			<Col xs={12} className="mb-3">
-				<Form.Group controlId="hourlyRate">
-					<Form.Label>Hourly Rate</Form.Label>
-					<Form.Control type="text" name="hourlyRate" />
-				</Form.Group>
-			</Col>
-			<Col xs={12}>
-				<Form.Group controlId="profileOverview">
-					<Form.Label>Overview</Form.Label>
-					<Form.Control as="textarea" rows={4} name="profileOverview" />
-				</Form.Group>
-			</Col>
-		</Row>
+		<Form>
+			<Row className="align-items-end">
+				<Col xs={12} className="mb-3">
+					<Form.Group controlId="profileTitle">
+						<Form.Label>Title</Form.Label>
+						<Form.Control type="text" name="profileTitle" />
+					</Form.Group>
+				</Col>
+				<Col xs={12} className="mb-3">
+					<Form.Group controlId="hourlyRate">
+						<Form.Label>Hourly Rate</Form.Label>
+						<Form.Control type="text" name="hourlyRate" />
+					</Form.Group>
+				</Col>
+				<Col xs={12}>
+					<Form.Group controlId="profileOverview">
+						<Form.Label>Overview</Form.Label>
+						<Form.Control as="textarea" rows={4} name="profileOverview" />
+					</Form.Group>
+				</Col>
+			</Row>
+		</Form>
 	);
 
 	return (

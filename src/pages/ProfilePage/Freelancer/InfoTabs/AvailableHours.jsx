@@ -16,14 +16,16 @@ const AvailableHours = ({ activeUser, publicView }) => {
 
 	// modal field forms
 	const renderFormFields = (
-		<Row className="align-items-end">
-			<Col xs={12}>
-				<Form.Group controlId="availableHours">
-					<Form.Label>Your available hours in a week</Form.Label>
-					<Form.Control type="text" name="availableHours" />
-				</Form.Group>
-			</Col>
-		</Row>
+		<Form>
+			<Row className="align-items-end">
+				<Col xs={12}>
+					<Form.Group controlId="availableHours">
+						<Form.Label>Your available hours in a week</Form.Label>
+						<Form.Control type="text" name="availableHours" />
+					</Form.Group>
+				</Col>
+			</Row>
+		</Form>
 	);
 
 	return (

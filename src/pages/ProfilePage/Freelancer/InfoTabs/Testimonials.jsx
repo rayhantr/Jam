@@ -18,20 +18,22 @@ const Testimonials = ({ testimonialList, publicView }) => {
 
 	// modal field forms
 	const renderFormFields = (
-		<Row className="align-items-end">
-			<Col xs={12} className="mb-3">
-				<Form.Group controlId="title">
-					<Form.Label>Title</Form.Label>
-					<Form.Control type="text" name="title" />
-				</Form.Group>
-			</Col>
-			<Col xs={12}>
-				<Form.Group controlId="overview">
-					<Form.Label>Overview</Form.Label>
-					<Form.Control as="textarea" rows={4} name="overview" />
-				</Form.Group>
-			</Col>
-		</Row>
+		<Form>
+			<Row className="align-items-end">
+				<Col xs={12} className="mb-3">
+					<Form.Group controlId="title">
+						<Form.Label>Title</Form.Label>
+						<Form.Control type="text" name="title" />
+					</Form.Group>
+				</Col>
+				<Col xs={12}>
+					<Form.Group controlId="overview">
+						<Form.Label>Overview</Form.Label>
+						<Form.Control as="textarea" rows={4} name="overview" />
+					</Form.Group>
+				</Col>
+			</Row>
+		</Form>
 	);
 
 	return (

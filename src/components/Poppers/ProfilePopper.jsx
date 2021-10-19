@@ -25,7 +25,7 @@ export const QuickNav = ({ onClick }) => {
 		{ title: "Teams", icon: <i className="fas fa-users"></i>, path: "/profile/settings/teams", onClick: onClick },
 		{ title: `Theme: ${theme ? "Dark" : "Light"}`, icon: theme ? <i className="fas fa-moon"></i> : <i className="fas fa-sun"></i>, onClick: handleToggle },
 		{ title: "Settings", icon: <i className="fas fa-cog"></i>, path: "/profile/settings", onClick: onClick },
-		{ title: "Switch Account", icon: <i className="fas fa-exchange-alt"></i> },
+		{ title: "Switch Account", icon: <i className="fas fa-exchange-alt"></i>, path: "/admin/dashboard", onClick: onClick },
 		{ title: "Logout", icon: <i className="fas fa-sign-out-alt"></i> },
 	];
 
@@ -37,13 +37,13 @@ export const QuickNav = ({ onClick }) => {
 				// setting available props for each component if they exists
 				const pathProp = path ? { component: Link, to: path } : null;
 				const clickProp = onClick ? { onClick: onClick } : null;
-				const props = { ...pathProp, ...clickProp };
+				const propsExist = { ...pathProp, ...clickProp };
 
 				return (
 					<Col key={title} className="">
 						<div className="h-100 position-relative rounded-4 overflow-hidden">
 							<span className="popper-profile-quick-bg-overlay position-absolute">{icon}</span>
-							<Button {...props} variant="contained" color="primary" className="popper-profile-quick h-100 w-100 bg-primary-light text-secondary py-3" disableElevation>
+							<Button {...propsExist} variant="contained" color="primary" className="popper-profile-quick h-100 w-100 bg-primary-light text-secondary py-3" disableElevation>
 								<Row>
 									<Col xs={12} className="icon mb-1 text-center">
 										{icon}

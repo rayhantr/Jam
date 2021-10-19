@@ -3,18 +3,20 @@ import React from "react";
 
 // This is a material ui modal form
 const DialogForm = (props) => {
+	const { onClose, open, title, children, action, ...other } = props;
+
 	return (
-		<Dialog {...props} onClose={props.onClose} aria-labelledby="customized-dialog-title" open={props.open}>
-			<DialogTitle id="customized-dialog-title" onClose={props.onClose}>
-				{props.title}
+		<Dialog {...other} onClose={onClose} aria-labelledby="customized-dialog-title" open={open}>
+			<DialogTitle id="customized-dialog-title" onClose={onClose}>
+				{title}
 			</DialogTitle>
-			<DialogContent>{props.children}</DialogContent>
+			<DialogContent>{children}</DialogContent>
 			<DialogActions>
-				<Button className="me-3" color="secondary" disableElevation onClick={props.onClose}>
+				<Button className="me-3" color="secondary" disableElevation onClick={onClose}>
 					Cancel
 				</Button>
 				<Button variant="contained" color="secondary" disableElevation>
-					{props.action}
+					{action}
 				</Button>
 			</DialogActions>
 		</Dialog>

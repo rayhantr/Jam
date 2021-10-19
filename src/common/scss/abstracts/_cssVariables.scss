@@ -2,21 +2,7 @@
 
 $color-primary: $primary;
 $color-secondary: $secondary;
-$color-white: white;
-$color-gray: #777777;
-$color-body: #fafbfe;
-$color-light: #7d93b2;
-$color-danger: #dc004e;
-$color-gray-light: #a1a1a1;
-$color-blue-light: #ebeef9;
-$color-primary-light: rgba(
-	$color: $color-primary,
-	$alpha: 0.2,
-);
-$color-secondary-light: rgba(
-	$color: $color-secondary,
-	$alpha: 0.2,
-);
+
 // box shadow
 $box-shadow-light: 0 0 35px 0 rgba(154, 161, 171, 0.15);
 $box-shadow-compact: 0 0 5px 0 rgba(154, 161, 171, 0.35);
