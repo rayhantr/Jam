@@ -2,7 +2,7 @@
 import { Toolbar } from "@material-ui/core";
 import React from "react";
 
-export default function Footer() {
+const Footer: React.FC = () => {
 	return (
 		<>
 			<footer id="footer" className="footer mt-auto d-none">
@@ -197,3 +197,5 @@ export default function Footer() {
 		</>
 	);
 }
+
+export default Footer;
