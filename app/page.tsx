@@ -2,11 +2,12 @@
 
 import { Suspense, useState } from 'react'
 import { Box, Typography, CircularProgress, Tabs, Tab, Container, Button } from '@mui/material'
-import { Rocket, Store, Code, Palette, Navigation, Message } from '@mui/icons-material'
+import { Rocket, Store, Code, Palette, Navigation, Message, Assignment } from '@mui/icons-material'
 import { StoreDemo } from './components/StoreDemo'
 import ComponentDemo from './components/ComponentDemo'
 import NavigationDemo from './components/NavigationDemo'
 import MessagingDemo from './components/MessagingDemo'
+import FormsDemo from './components/FormsDemo'
 
 function TabPanel({ children, value, index }: { children: React.ReactNode, value: number, index: number }) {
   return (
@@ -54,6 +55,7 @@ function HomePage() {
             <Tab label="Component Demo" icon={<Palette />} />
             <Tab label="Navigation Demo" icon={<Navigation />} />
             <Tab label="Messaging Demo" icon={<Message />} />
+            <Tab label="Forms Demo" icon={<Assignment />} />
           </Tabs>
           
           <TabPanel value={tabValue} index={0}>
@@ -87,7 +89,9 @@ function HomePage() {
                   ✅ Navigation components (TopNav, BottomNav)<br />
                   ✅ Messaging components (MessageList, ChatWindow)<br />
                   ✅ Notification system (NotificationList)<br />
-                  🔄 Form components next...
+                  ✅ Form components (InputField, SelectField, CheckboxField)<br />
+                  ✅ File upload and multi-step forms<br />
+                  🔄 Page components next...
                 </Typography>
               </Box>
             </Box>
@@ -107,6 +111,10 @@ function HomePage() {
           
           <TabPanel value={tabValue} index={4}>
             <MessagingDemo />
+          </TabPanel>
+          
+          <TabPanel value={tabValue} index={5}>
+            <FormsDemo />
           </TabPanel>
         </Box>
       </Box>
