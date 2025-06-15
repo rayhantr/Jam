@@ -1,3 +1,5 @@
+'use client'
+
 import { Metadata } from 'next'
 import {
   Box,
@@ -513,4 +515,3 @@ export default function SettingsPage() {
     </Box>
   )
 }
-

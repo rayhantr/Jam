@@ -1,7 +1,5 @@
 import { Metadata } from 'next'
-import { Box, Container } from '@mui/material'
-import { TopNav } from '@/app/components/navigation/TopNav'
-import { BottomNav } from '@/app/components/navigation/BottomNav'
+import { Box, Container, AppBar, Toolbar, Typography } from '@mui/material'
 
 export const metadata: Metadata = {
   title: {
@@ -18,8 +16,14 @@ interface DashboardLayoutProps {
 export default function DashboardLayout({ children }: DashboardLayoutProps) {
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-      {/* Top Navigation */}
-      <TopNav />
+      {/* Simple Top Navigation */}
+      <AppBar position="static" elevation={1}>
+        <Toolbar>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            Jam Dashboard
+          </Typography>
+        </Toolbar>
+      </AppBar>
       
       {/* Main Content */}
       <Box component="main" sx={{ flexGrow: 1, py: 3 }}>
@@ -27,12 +31,6 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
           {children}
         </Container>
       </Box>
-      
-      {/* Bottom Navigation for Mobile */}
-      <Box sx={{ display: { xs: 'block', md: 'none' } }}>
-        <BottomNav />
-      </Box>
     </Box>
   )
 }
-
