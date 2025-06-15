@@ -93,7 +93,7 @@ export function PageDemo() {
       title: 'Team',
       description: 'Team collaboration and member management',
       icon: <Person />,
-      status: 'planned',
+      status: 'completed',
       category: 'dashboard',
     },
     {
@@ -101,7 +101,7 @@ export function PageDemo() {
       title: 'Time Tracker',
       description: 'Time tracking with project and task integration',
       icon: <Schedule />,
-      status: 'planned',
+      status: 'completed',
       category: 'dashboard',
     },
     {
@@ -109,7 +109,7 @@ export function PageDemo() {
       title: 'Support',
       description: 'Help desk and support ticket management',
       icon: <Settings />,
-      status: 'planned',
+      status: 'completed',
       category: 'dashboard',
     },
 
@@ -119,7 +119,7 @@ export function PageDemo() {
       title: 'Profile',
       description: 'User profile management and settings',
       icon: <Person />,
-      status: 'planned',
+      status: 'completed',
       category: 'profile',
     },
     {
@@ -145,7 +145,7 @@ export function PageDemo() {
       title: 'Login',
       description: 'User authentication and sign-in',
       icon: <Login />,
-      status: 'planned',
+      status: 'completed',
       category: 'auth',
     },
     {
@@ -153,7 +153,7 @@ export function PageDemo() {
       title: 'Register',
       description: 'User registration and account creation',
       icon: <Person />,
-      status: 'planned',
+      status: 'completed',
       category: 'auth',
     },
 
@@ -408,4 +408,3 @@ export function PageDemo() {
     </Box>
   )
 }
-
