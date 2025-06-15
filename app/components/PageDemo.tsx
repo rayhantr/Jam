@@ -127,7 +127,15 @@ export function PageDemo() {
       title: 'Freelancer Profile',
       description: 'Freelancer-specific profile with portfolio and skills',
       icon: <Person />,
-      status: 'planned',
+      status: 'completed',
+      category: 'profile',
+    },
+    {
+      path: '/(profile)/profile/proposals',
+      title: 'My Proposals',
+      description: 'Manage project proposals and applications',
+      icon: <Assignment />,
+      status: 'completed',
       category: 'profile',
     },
     {
@@ -135,7 +143,7 @@ export function PageDemo() {
       title: 'Settings',
       description: 'Account settings and preferences',
       icon: <Settings />,
-      status: 'planned',
+      status: 'completed',
       category: 'profile',
     },
 
