@@ -2,8 +2,9 @@
 
 import { Suspense, useState } from 'react'
 import { Box, Typography, CircularProgress, Tabs, Tab, Container, Button } from '@mui/material'
-import { Rocket, Store, Code } from '@mui/icons-material'
+import { Rocket, Store, Code, Palette } from '@mui/icons-material'
 import { StoreDemo } from './components/StoreDemo'
+import ComponentDemo from './components/ComponentDemo'
 
 function TabPanel({ children, value, index }: { children: React.ReactNode, value: number, index: number }) {
   return (
@@ -48,6 +49,7 @@ function HomePage() {
           >
             <Tab label="Overview" icon={<Code />} />
             <Tab label="Store Demo" icon={<Store />} />
+            <Tab label="Component Demo" icon={<Palette />} />
           </Tabs>
           
           <TabPanel value={tabValue} index={0}>
@@ -87,6 +89,10 @@ function HomePage() {
           
           <TabPanel value={tabValue} index={1}>
             <StoreDemo />
+          </TabPanel>
+          
+          <TabPanel value={tabValue} index={2}>
+            <ComponentDemo />
           </TabPanel>
         </Box>
       </Box>
