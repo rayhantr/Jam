@@ -31,6 +31,7 @@ import {
   Schedule,
   Code,
   Rocket,
+  Message,
 } from '@mui/icons-material'
 import Link from 'next/link'
 
@@ -171,8 +172,18 @@ export function PageDemo() {
       title: 'Admin Dashboard',
       description: 'Administrative dashboard and controls',
       icon: <AdminPanelSettings />,
-      status: 'planned',
+      status: 'completed',
       category: 'admin',
+    },
+
+    // Communication Pages
+    {
+      path: '/messages',
+      title: 'Messages',
+      description: 'Communication and messaging system',
+      icon: <Message />,
+      status: 'completed',
+      category: 'communication',
     },
   ]
 
@@ -182,6 +193,7 @@ export function PageDemo() {
     { value: 'profile', label: 'Profile', count: pageRoutes.filter(p => p.category === 'profile').length },
     { value: 'auth', label: 'Authentication', count: pageRoutes.filter(p => p.category === 'auth').length },
     { value: 'admin', label: 'Admin', count: pageRoutes.filter(p => p.category === 'admin').length },
+    { value: 'communication', label: 'Communication', count: pageRoutes.filter(p => p.category === 'communication').length },
   ]
 
   const filteredRoutes = selectedCategory === 'all' 
