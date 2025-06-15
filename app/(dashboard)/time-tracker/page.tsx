@@ -1,4 +1,6 @@
-import { Metadata } from 'next'
+'use client'
+
+
 import {
   Box,
   Grid,
@@ -34,10 +36,7 @@ import {
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 
-export const metadata: Metadata = {
-  title: 'Time Tracker',
-  description: 'Track time spent on projects and tasks',
-}
+
 
 // Types
 interface TimeEntry {
@@ -419,4 +418,3 @@ export default function TimeTrackerPage() {
     </Box>
   )
 }
-

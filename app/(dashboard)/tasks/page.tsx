@@ -1,4 +1,6 @@
-import { Metadata } from 'next'
+'use client'
+
+
 import {
   Box,
   Grid,
@@ -29,10 +31,7 @@ import {
 import Link from 'next/link'
 import { useState } from 'react'
 
-export const metadata: Metadata = {
-  title: 'Tasks',
-  description: 'Manage your tasks and track your progress',
-}
+
 
 // Types
 interface Task {
@@ -330,4 +329,3 @@ export default function TasksPage() {
     </Box>
   )
 }
-

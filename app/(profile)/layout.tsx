@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import { Box, Container, Paper } from '@mui/material'
-import { TopNav } from '@/app/components/navigation/TopNav'
+import TopNav from '@/components/navigation/TopNav'
 
 export const metadata: Metadata = {
   title: {
@@ -31,4 +31,3 @@ export default function ProfileLayout({ children }: ProfileLayoutProps) {
     </Box>
   )
 }
-

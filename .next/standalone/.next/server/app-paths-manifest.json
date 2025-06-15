@@ -1,4 +1,20 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
+  "/messages/page": "app/messages/page.js",
   "/page": "app/page.js",
-  "/_not-found/page": "app/_not-found/page.js"
+  "/(admin)/admin/page": "app/(admin)/admin/page.js",
+  "/(auth)/login/page": "app/(auth)/login/page.js",
+  "/(auth)/register/page": "app/(auth)/register/page.js",
+  "/(dashboard)/projects/page": "app/(dashboard)/projects/page.js",
+  "/(dashboard)/support/page": "app/(dashboard)/support/page.js",
+  "/(dashboard)/team/page": "app/(dashboard)/team/page.js",
+  "/(dashboard)/time-tracker/page": "app/(dashboard)/time-tracker/page.js",
+  "/(dashboard)/tasks/page": "app/(dashboard)/tasks/page.js",
+  "/(dashboard)/plans/page": "app/(dashboard)/plans/page.js",
+  "/(profile)/profile/freelancer/page": "app/(profile)/profile/freelancer/page.js",
+  "/(profile)/profile/settings/page": "app/(profile)/profile/settings/page.js",
+  "/(profile)/profile/proposals/page": "app/(profile)/profile/proposals/page.js",
+  "/(profile)/profile/page": "app/(profile)/profile/page.js",
+  "/(dashboard)/dashboard/page": "app/(dashboard)/dashboard/page.js",
+  "/(dashboard)/reports/page": "app/(dashboard)/reports/page.js"
 }

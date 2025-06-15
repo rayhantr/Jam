@@ -1,4 +1,6 @@
-import { Metadata } from 'next'
+'use client'
+
+
 import {
   Box,
   Grid,
@@ -33,10 +35,7 @@ import {
 import Link from 'next/link'
 import { useState } from 'react'
 
-export const metadata: Metadata = {
-  title: 'Team',
-  description: 'Manage your team members, groups, and collaboration',
-}
+
 
 // Types
 interface TeamMember {
@@ -381,4 +380,3 @@ export default function TeamPage() {
     </Box>
   )
 }
-

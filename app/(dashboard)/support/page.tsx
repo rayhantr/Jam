@@ -1,4 +1,6 @@
-import { Metadata } from 'next'
+'use client'
+
+
 import {
   Box,
   Grid,
@@ -29,14 +31,11 @@ import {
 } from '@mui/icons-material'
 import Link from 'next/link'
 import { useState } from 'react'
-import { FormModal } from '@/app/components/forms/FormModal'
-import { InputField } from '@/app/components/forms/InputField'
-import { SelectField } from '@/app/components/forms/SelectField'
+import FormModal from '@/components/forms/FormModal'
+import InputField from '@/components/forms/InputField'
+import SelectField from '@/components/forms/SelectField'
 
-export const metadata: Metadata = {
-  title: 'Support',
-  description: 'Get help and manage support tickets',
-}
+
 
 // Types
 interface SupportTicket {
@@ -277,6 +276,17 @@ export default function SupportPage() {
     // Here you would typically call an API to create the ticket
   }
 
+  const handleSubmitTicket = () => {
+    // For now, just create a dummy ticket
+    const dummyValues = {
+      title: 'New Support Ticket',
+      description: 'Ticket description',
+      category: 'general',
+      priority: 'medium',
+    }
+    handleCreateTicket(dummyValues)
+  }
+
   return (
     <Box>
       {/* Page Header */}
@@ -326,12 +336,13 @@ export default function SupportPage() {
         open={createTicketOpen}
         onClose={() => setCreateTicketOpen(false)}
         title="Create a Support Ticket"
-        onSubmit={handleCreateTicket}
-        initialValues={{
-          title: '',
-          description: '',
-          category: '',
-          priority: 'medium',
+        primaryAction={{
+          label: 'Create Ticket',
+          onClick: handleSubmitTicket,
+        }}
+        secondaryAction={{
+          label: 'Cancel',
+          onClick: () => setCreateTicketOpen(false),
         }}
       >
         <Grid container spacing={3}>
@@ -392,4 +403,3 @@ export default function SupportPage() {
     </Box>
   )
 }
-

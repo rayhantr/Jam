@@ -1,12 +1,9 @@
+'use client'
+
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { Box, Button, Container, Typography } from '@mui/material'
 import { Home, ArrowBack } from '@mui/icons-material'
-
-export const metadata: Metadata = {
-  title: '404 - Page Not Found | Jam',
-  description: 'The page you are looking for could not be found.',
-}
 
 export default function NotFound() {
   return (
@@ -101,4 +98,3 @@ export default function NotFound() {
     </Container>
   )
 }
-

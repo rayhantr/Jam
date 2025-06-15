@@ -1,4 +1,20 @@
 {
+  "/_not-found/page": "/_not-found",
+  "/messages/page": "/messages",
   "/page": "/",
-  "/_not-found/page": "/_not-found"
+  "/(admin)/admin/page": "/admin",
+  "/(auth)/login/page": "/login",
+  "/(auth)/register/page": "/register",
+  "/(dashboard)/projects/page": "/projects",
+  "/(dashboard)/support/page": "/support",
+  "/(dashboard)/team/page": "/team",
+  "/(dashboard)/time-tracker/page": "/time-tracker",
+  "/(dashboard)/tasks/page": "/tasks",
+  "/(dashboard)/plans/page": "/plans",
+  "/(profile)/profile/freelancer/page": "/profile/freelancer",
+  "/(profile)/profile/settings/page": "/profile/settings",
+  "/(profile)/profile/proposals/page": "/profile/proposals",
+  "/(profile)/profile/page": "/profile",
+  "/(dashboard)/dashboard/page": "/dashboard",
+  "/(dashboard)/reports/page": "/reports"
 }

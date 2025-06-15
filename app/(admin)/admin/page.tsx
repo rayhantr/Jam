@@ -1,5 +1,7 @@
 'use client'
 
+export const dynamic = 'force-dynamic'
+
 import {
   Box,
   Grid,
@@ -310,10 +312,10 @@ function RecentUsers({ users }: { users: User[] }) {
                     {new Date(user.lastActive).toLocaleDateString()}
                   </TableCell>
                   <TableCell align="right">
-                    <IconButton size="small">
+                    <IconButton size="small" onClick={() => console.log('Edit user')}>
                       <Edit />
                     </IconButton>
-                    <IconButton size="small">
+                    <IconButton size="small" onClick={() => console.log('More options')}>
                       <MoreVert />
                     </IconButton>
                   </TableCell>
@@ -401,10 +403,10 @@ function ActiveProjects({ projects }: { projects: Project[] }) {
                     />
                   </TableCell>
                   <TableCell align="right">
-                    <IconButton size="small">
+                    <IconButton size="small" onClick={() => console.log('View project')}>
                       <Visibility />
                     </IconButton>
-                    <IconButton size="small">
+                    <IconButton size="small" onClick={() => console.log('More options')}>
                       <MoreVert />
                     </IconButton>
                   </TableCell>
@@ -486,6 +488,11 @@ function QuickActions() {
     { icon: <Notifications />, label: 'Send Notifications', color: 'error' as const },
   ]
 
+  const handleActionClick = (actionLabel: string) => {
+    console.log(`Clicked: ${actionLabel}`)
+    // Add actual functionality here
+  }
+
   return (
     <Card elevation={1}>
       <CardHeader title="Quick Actions" />
@@ -499,6 +506,7 @@ function QuickActions() {
                 startIcon={action.icon}
                 color={action.color}
                 sx={{ py: 1.5, justifyContent: 'flex-start' }}
+                onClick={() => handleActionClick(action.label)}
               >
                 {action.label}
               </Button>

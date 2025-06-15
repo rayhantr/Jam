@@ -1,4 +1,6 @@
-import { Metadata } from 'next'
+'use client'
+
+
 import {
   Box,
   Grid,
@@ -30,15 +32,12 @@ import {
 } from '@mui/icons-material'
 import Link from 'next/link'
 import { useState } from 'react'
-import { FormModal } from '@/app/components/forms/FormModal'
-import { InputField } from '@/app/components/forms/InputField'
-import { SelectField } from '@/app/components/forms/SelectField'
-import { CheckboxField } from '@/app/components/forms/CheckboxField'
+import FormModal from '@/components/forms/FormModal'
+import InputField from '@/components/forms/InputField'
+import SelectField from '@/components/forms/SelectField'
+import CheckboxField from '@/components/forms/CheckboxField'
 
-export const metadata: Metadata = {
-  title: 'Projects',
-  description: 'Manage your freelance projects and collaborations',
-}
+
 
 // Types
 interface Project {
@@ -225,6 +224,19 @@ export default function ProjectsPage() {
     // Here you would typically call an API to create the project
   }
 
+  const handleSubmitProject = () => {
+    // For now, just create a dummy project
+    const dummyValues = {
+      projectName: 'New Project',
+      description: 'Project description',
+      timeline: '3 months',
+      visibility: 'private',
+      status: 'active',
+      features: [],
+    }
+    handleAddProject(dummyValues)
+  }
+
   return (
     <Box>
       {/* Page Header */}
@@ -271,14 +283,13 @@ export default function ProjectsPage() {
         open={addModalOpen}
         onClose={() => setAddModalOpen(false)}
         title="Create New Project"
-        onSubmit={handleAddProject}
-        initialValues={{
-          projectName: '',
-          description: '',
-          timeline: '',
-          visibility: 'private',
-          status: 'active',
-          features: [],
+        primaryAction={{
+          label: 'Create Project',
+          onClick: handleSubmitProject,
+        }}
+        secondaryAction={{
+          label: 'Cancel',
+          onClick: () => setAddModalOpen(false),
         }}
       >
         <Grid container spacing={3}>
@@ -339,7 +350,7 @@ export default function ProjectsPage() {
                 { value: 'multiAdmin', label: 'Multi Admin Access' },
                 { value: 'mailActivity', label: 'Mail Activity' },
               ]}
-              layout="horizontal"
+              row
             />
           </Grid>
         </Grid>
@@ -362,4 +373,3 @@ export default function ProjectsPage() {
     </Box>
   )
 }
-

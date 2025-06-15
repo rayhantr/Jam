@@ -41,7 +41,7 @@ interface PageRoute {
   description: string
   icon: React.ReactNode
   status: 'completed' | 'in-progress' | 'planned'
-  category: 'dashboard' | 'profile' | 'auth' | 'admin'
+  category: 'dashboard' | 'profile' | 'auth' | 'admin' | 'communication'
 }
 
 export function PageDemo() {
