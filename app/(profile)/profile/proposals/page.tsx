@@ -1,6 +1,5 @@
 'use client'
 
-import { Metadata } from 'next'
 import {
   Box,
   Grid,
@@ -37,11 +36,6 @@ import {
 } from '@mui/icons-material'
 import Link from 'next/link'
 import { useState } from 'react'
-
-export const metadata: Metadata = {
-  title: 'My Proposals',
-  description: 'Manage your project proposals and applications',
-}
 
 // Types
 interface Proposal {

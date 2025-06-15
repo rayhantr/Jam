@@ -1,6 +1,6 @@
 'use client'
 
-import { Metadata } from 'next'
+
 import {
   Box,
   Grid,
@@ -42,10 +42,7 @@ import {
 import Link from 'next/link'
 import { useState } from 'react'
 
-export const metadata: Metadata = {
-  title: 'Profile Settings',
-  description: 'Manage your account settings and preferences',
-}
+
 
 // Types
 interface NotificationSettings {

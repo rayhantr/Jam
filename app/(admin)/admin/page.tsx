@@ -1,6 +1,5 @@
 'use client'
 
-import { Metadata } from 'next'
 import {
   Box,
   Grid,
@@ -48,11 +47,6 @@ import {
 } from '@mui/icons-material'
 import Link from 'next/link'
 import { useState } from 'react'
-
-export const metadata: Metadata = {
-  title: 'Admin Dashboard',
-  description: 'Administrative dashboard for system management and oversight',
-}
 
 // Types
 interface SystemMetrics {

@@ -1,6 +1,5 @@
 'use client'
 
-import { Metadata } from 'next'
 import {
   Box,
   Button,
@@ -22,11 +21,6 @@ import {
 } from '@mui/icons-material'
 import Link from 'next/link'
 import { useState } from 'react'
-
-export const metadata: Metadata = {
-  title: 'Sign Up',
-  description: 'Create your Jam account and start freelancing',
-}
 
 export default function RegisterPage() {
   const [formData, setFormData] = useState({

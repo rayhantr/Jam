@@ -1,6 +1,5 @@
 'use client'
 
-import { Metadata } from 'next'
 import {
   Box,
   Grid,
@@ -41,11 +40,6 @@ import {
 } from '@mui/icons-material'
 import Link from 'next/link'
 import { useState } from 'react'
-
-export const metadata: Metadata = {
-  title: 'Freelancer Profile Editor',
-  description: 'Edit your freelancer profile, portfolio, and professional information',
-}
 
 // Types
 interface Portfolio {

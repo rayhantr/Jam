@@ -1,6 +1,6 @@
 'use client'
 
-import { Metadata } from 'next'
+
 import {
   Box,
   Grid,
@@ -39,10 +39,7 @@ import {
 } from '@mui/icons-material'
 import { useState } from 'react'
 
-export const metadata: Metadata = {
-  title: 'Messages',
-  description: 'Communicate with clients and freelancers',
-}
+
 
 // Types
 interface Message {
