@@ -29,6 +29,7 @@ import {
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import NavPopper from './NavPopper'
+import { MessageList, NotificationList } from '../messaging'
 
 // Navigation items configuration
 const navItems = [
@@ -265,20 +266,14 @@ const MessagePopper: React.FC<{ activeRoute: boolean }> = ({ activeRoute }) => {
       >
         <Paper
           sx={{
-            width: 350,
-            maxHeight: 400,
+            width: 400,
+            maxHeight: 500,
             boxShadow: 3,
             borderRadius: 2,
+            overflow: 'hidden',
           }}
         >
-          <Box p={2}>
-            <Typography variant="h6" gutterBottom>
-              Messages
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              No new messages
-            </Typography>
-          </Box>
+          <MessageList isPopper onClick={handleClose} />
         </Paper>
       </NavPopper>
     </>
@@ -318,20 +313,14 @@ const NotificationPopper: React.FC<{ activeRoute: boolean }> = ({ activeRoute })
       >
         <Paper
           sx={{
-            width: 350,
-            maxHeight: 400,
+            width: 400,
+            maxHeight: 500,
             boxShadow: 3,
             borderRadius: 2,
+            overflow: 'hidden',
           }}
         >
-          <Box p={2}>
-            <Typography variant="h6" gutterBottom>
-              Notifications
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              No new notifications
-            </Typography>
-          </Box>
+          <NotificationList isPopper onClick={handleClose} />
         </Paper>
       </NavPopper>
     </>

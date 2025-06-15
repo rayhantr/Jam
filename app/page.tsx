@@ -2,10 +2,11 @@
 
 import { Suspense, useState } from 'react'
 import { Box, Typography, CircularProgress, Tabs, Tab, Container, Button } from '@mui/material'
-import { Rocket, Store, Code, Palette, Navigation } from '@mui/icons-material'
+import { Rocket, Store, Code, Palette, Navigation, Message } from '@mui/icons-material'
 import { StoreDemo } from './components/StoreDemo'
 import ComponentDemo from './components/ComponentDemo'
 import NavigationDemo from './components/NavigationDemo'
+import MessagingDemo from './components/MessagingDemo'
 
 function TabPanel({ children, value, index }: { children: React.ReactNode, value: number, index: number }) {
   return (
@@ -52,6 +53,7 @@ function HomePage() {
             <Tab label="Store Demo" icon={<Store />} />
             <Tab label="Component Demo" icon={<Palette />} />
             <Tab label="Navigation Demo" icon={<Navigation />} />
+            <Tab label="Messaging Demo" icon={<Message />} />
           </Tabs>
           
           <TabPanel value={tabValue} index={0}>
@@ -73,7 +75,7 @@ function HomePage() {
                 }}
               >
                 <Typography variant="h6" gutterBottom>
-                  🎯 Phase 3 Progress: Navigation Components Complete!
+                  💬 Phase 3 Progress: Messaging Components Complete!
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   ✅ Next.js 15 with App Router<br />
@@ -83,8 +85,9 @@ function HomePage() {
                   ✅ Redux compatibility layer<br />
                   ✅ Core UI components (BtnLink, BtnIcon)<br />
                   ✅ Navigation components (TopNav, BottomNav)<br />
-                  ✅ Interactive component demos<br />
-                  🔄 Chat/Message components next...
+                  ✅ Messaging components (MessageList, ChatWindow)<br />
+                  ✅ Notification system (NotificationList)<br />
+                  🔄 Form components next...
                 </Typography>
               </Box>
             </Box>
@@ -100,6 +103,10 @@ function HomePage() {
           
           <TabPanel value={tabValue} index={3}>
             <NavigationDemo />
+          </TabPanel>
+          
+          <TabPanel value={tabValue} index={4}>
+            <MessagingDemo />
           </TabPanel>
         </Box>
       </Box>
