@@ -1,0 +1,178 @@
+.jamNav {
+	&-top {
+		.search-input {
+			border-radius: 0.5rem;
+			background-color: darken($color-secondary, 8%);
+			transition: all 0.2s ease;
+			&:hover {
+				background-color: darken($color-secondary, 5%);
+			}
+			&::placeholder {
+				color: $color-light;
+				opacity: 1;
+			}
+		}
+	}
+
+	&-side {
+		a {
+			color: $color-light;
+		}
+
+		.Mui-selected {
+			background-color: rgba($color: $color-primary, $alpha: 0.2) !important;
+
+			.MuiListItemIcon-root,
+			.MuiListItemText-root {
+				color: $color-secondary !important;
+			}
+		}
+
+		&-responsive {
+			transition: all 0.3s ease;
+
+			&-display {
+				// border-radius: 0;
+				transition: all 0.3s ease;
+
+				&.expanded {
+					border-radius: $border-radius;
+				}
+			}
+		}
+	}
+
+	&-bottom {
+		$border-radius: 0.5rem;
+		transition: all 0.3ms ease;
+
+		a {
+			position: relative;
+			line-height: 1;
+			color: $color-white;
+		}
+
+		.nav-mains {
+			border-top-right-radius: $border-radius;
+			box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+			transition: all 0.3ms ease;
+		}
+
+		.nav-menu {
+			&-btn {
+				position: relative;
+
+				a {
+					border-radius: $border-radius;
+
+					i {
+						min-width: 1rem;
+					}
+				}
+
+				&:before {
+					content: "";
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: calc(#{$border-radius} * 2);
+					height: calc(#{$border-radius} * 2);
+					background: transparent;
+					border-radius: 50%;
+					box-shadow: -$border-radius $border-radius 0 $color-secondary;
+				}
+
+				&:after {
+					content: "";
+					pointer-events: none;
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					width: calc(#{$border-radius} * 2);
+					height: calc(#{$border-radius} * 2);
+					background: transparent;
+					border-radius: 50%;
+					box-shadow: $border-radius $border-radius 0 $color-secondary;
+				}
+			}
+		}
+
+		&-btn {
+			transition: all 0.3s ease !important;
+
+			&.active .jamNav-bottom-indicator {
+				bottom: 0;
+			}
+		}
+
+		&-indicator {
+			width: 2rem;
+			height: 0.5rem;
+			bottom: -0.5rem;
+			background: $color-white;
+			border-top-left-radius: 0.5rem;
+			border-top-right-radius: 0.5rem;
+			transition: all 0.3s ease;
+		}
+	}
+
+	.nav-menu-close {
+		a {
+			color: $color-white;
+		}
+	}
+}
+
+.user-account-actions {
+	&::before {
+		content: "";
+		position: absolute;
+		top: -160px;
+		right: -110px;
+		width: 210px;
+		height: 210px;
+		background: linear-gradient(140.9deg, $color-primary -25%, rgba(144, 202, 249, 0) 75%);
+		border-radius: 50%;
+		pointer-events: none;
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		top: -20px;
+		right: -180px;
+		width: 210px;
+		height: 210px;
+		background: linear-gradient(210.04deg, $color-primary -50.94%, rgba(144, 202, 249, 0) 83.49%);
+		border-radius: 50%;
+		pointer-events: none;
+	}
+}
+
+@keyframes ripple {
+	0% {
+		transform: scale(0.1);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(2.3);
+		opacity: 0;
+	}
+}
+
+.simplebar-track {
+	width: 7px !important;
+}
+
+.simplebar-scrollbar:before {
+	background-color: $color-secondary !important;
+	width: 4px;
+}
+
+.subNav-indicator {
+	font-size: 0.8rem;
+	transition: all 0.3s ease;
+
+	&.rotate {
+		transform: rotate(90deg);
+	}
+}

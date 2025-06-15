@@ -1,0 +1,19 @@
+// Pricing Card
+.pricing-card {
+	&-header {
+		h1 {
+			font-size: 3.5rem;
+		}
+		.category {
+			border-top-left-radius: 1em;
+			border-bottom-left-radius: 1em;
+			&:after {
+				left: -1 * 50px;
+				border-top: 50px/2 solid transparent;
+				border-right: 50px/2 solid $color-primary;
+				border-bottom: 50px/2 solid $color-primary;
+				border-left: 50px/2 solid transparent;
+			}
+		}
+	}
+}

@@ -1,0 +1,45 @@
+.popper {
+	&-notification {
+		width: 360px;
+		border-radius: 0.5rem;
+		max-height: calc(90vh);
+
+		&-panel {
+			overflow-y: auto;
+			overflow-x: hidden;
+		}
+	}
+
+	&-profile {
+		&-viewProfile {
+			transition: all 0.3s ease;
+			&:hover {
+				background-color: $color-primary-light;
+			}
+		}
+		&-quick {
+			&:hover {
+				background-color: rgba($color-primary, 0.4) !important;
+			}
+			&-bg-overlay {
+				font-size: 4.5em;
+				top: -0.5em;
+				right: -0.4em;
+				// color: white;
+				background: linear-gradient(60deg, $color-primary -20%, white 75%);
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+		}
+	}
+}
+
+.quickNav .icon i {
+	font-size: 1.5em !important;
+}
+
+.divider {
+	height: 2px !important;
+	background-color: transparent;
+	background-image: linear-gradient(to right, transparent, $color-primary-light, transparent);
+}
