@@ -1,61 +1,101 @@
-import { Box, Typography, Button, Container } from '@mui/material'
-import { Home, Search } from '@mui/icons-material'
+import { Metadata } from 'next'
 import Link from 'next/link'
+import { Box, Button, Container, Typography } from '@mui/material'
+import { Home, ArrowBack } from '@mui/icons-material'
+
+export const metadata: Metadata = {
+  title: '404 - Page Not Found | Jam',
+  description: 'The page you are looking for could not be found.',
+}
 
 export default function NotFound() {
   return (
     <Container maxWidth="md">
       <Box
         sx={{
+          minHeight: '100vh',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          minHeight: '100vh',
           textAlign: 'center',
-          gap: 3,
+          py: 4,
         }}
       >
-        <Typography
-          variant="h1"
+        {/* 404 Visual */}
+        <Box
           sx={{
-            fontSize: { xs: '4rem', md: '6rem' },
-            fontWeight: 'bold',
-            color: 'primary.main',
+            position: 'relative',
+            mb: 4,
           }}
         >
-          404
+          <Typography
+            variant="h1"
+            sx={{
+              fontSize: { xs: '8rem', md: '12rem' },
+              fontWeight: 'bold',
+              color: 'primary.main',
+              opacity: 0.1,
+              lineHeight: 1,
+            }}
+          >
+            404
+          </Typography>
+          <Typography
+            variant="h2"
+            sx={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              fontSize: { xs: '2rem', md: '3rem' },
+              fontWeight: 'bold',
+              color: 'text.primary',
+            }}
+          >
+            Page Not Found
+          </Typography>
+        </Box>
+
+        {/* Error Message */}
+        <Typography
+          variant="h6"
+          color="text.secondary"
+          sx={{ mb: 4, maxWidth: 600 }}
+        >
+          The page you are looking for might have been removed, had its name changed, 
+          or is temporarily unavailable.
         </Typography>
-        
-        <Typography variant="h4" component="h1" gutterBottom>
-          Page Not Found
-        </Typography>
-        
-        <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 600 }}>
-          The page you're looking for doesn't exist. It might have been moved, deleted, 
-          or you entered the wrong URL.
-        </Typography>
-        
+
+        {/* Action Buttons */}
         <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', justifyContent: 'center' }}>
           <Button
             component={Link}
             href="/"
             variant="contained"
-            startIcon={<Home />}
             size="large"
+            startIcon={<Home />}
+            sx={{ minWidth: 140 }}
           >
-            Go Home
+            Home Page
           </Button>
           
           <Button
-            component={Link}
-            href="/jobs"
+            onClick={() => window.history.back()}
             variant="outlined"
-            startIcon={<Search />}
             size="large"
+            startIcon={<ArrowBack />}
+            sx={{ minWidth: 140 }}
           >
-            Browse Jobs
+            Go Back
           </Button>
+        </Box>
+
+        {/* Additional Help */}
+        <Box sx={{ mt: 6, p: 3, backgroundColor: 'grey.50', borderRadius: 2 }}>
+          <Typography variant="body2" color="text.secondary">
+            If you believe this is an error, please contact our support team.
+          </Typography>
         </Box>
       </Box>
     </Container>
