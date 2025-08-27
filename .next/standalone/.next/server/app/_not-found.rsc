@@ -1,0 +1,28 @@
+1:"$Sreact.fragment"
+2:I[463,["773","static/chunks/773-0814dc5068326d8e.js","2798","static/chunks/2798-89a6999e24bf7f0b.js","7177","static/chunks/app/layout-d92c61d3d9c6a105.js"],"Providers"]
+3:I[87555,[],""]
+4:I[62816,["773","static/chunks/773-0814dc5068326d8e.js","8746","static/chunks/8746-1e2932537c033da1.js","5635","static/chunks/5635-deaa619d47f6c9f2.js","8199","static/chunks/8199-8bbab623ae1a5dad.js","8039","static/chunks/app/error-66d4c18cd889135c.js"],"default"]
+5:I[31295,[],""]
+6:I[70137,["773","static/chunks/773-0814dc5068326d8e.js","8746","static/chunks/8746-1e2932537c033da1.js","5635","static/chunks/5635-deaa619d47f6c9f2.js","6874","static/chunks/6874-d27d5a76a33abf9d.js","4345","static/chunks/app/not-found-70c6f69ca53a5cd5.js"],"default"]
+7:I[90894,[],"ClientPageRoot"]
+a:I[59665,[],"MetadataBoundary"]
+c:I[59665,[],"OutletBoundary"]
+f:I[74911,[],"AsyncMetadataOutlet"]
+11:I[35327,["773","static/chunks/773-0814dc5068326d8e.js","8746","static/chunks/8746-1e2932537c033da1.js","5635","static/chunks/5635-deaa619d47f6c9f2.js","3544","static/chunks/3544-c42dd9bd2a77e536.js","6874","static/chunks/6874-d27d5a76a33abf9d.js","1580","static/chunks/1580-36e9f58e8c9950d0.js","993","static/chunks/993-3c208db126d32dd8.js","5208","static/chunks/5208-a88c2e8883215e02.js","3734","static/chunks/3734-0a817ac3f4b8f00f.js","2582","static/chunks/2582-abf55f5ce6730acc.js","9322","static/chunks/9322-656c7ab52abb730e.js","9694","static/chunks/9694-5369ba4492f6f412.js","5046","static/chunks/5046-f8495603fbfab25a.js","5263","static/chunks/5263-2082301187973534.js","9060","static/chunks/9060-b1c07402e852d709.js","7378","static/chunks/app/(profile)/layout-61460b61b0843e1e.js"],""]
+12:I[83902,["773","static/chunks/773-0814dc5068326d8e.js","8746","static/chunks/8746-1e2932537c033da1.js","4209","static/chunks/app/loading-1e7f6cf8fb2f57d4.js"],""]
+13:I[95069,["773","static/chunks/773-0814dc5068326d8e.js","8746","static/chunks/8746-1e2932537c033da1.js","9694","static/chunks/9694-5369ba4492f6f412.js","9305","static/chunks/app/(dashboard)/layout-a5e76636cae28a29.js"],""]
+14:I[59665,[],"ViewportBoundary"]
+16:I[39510,["773","static/chunks/773-0814dc5068326d8e.js","8746","static/chunks/8746-1e2932537c033da1.js","5635","static/chunks/5635-deaa619d47f6c9f2.js","8199","static/chunks/8199-8bbab623ae1a5dad.js","4219","static/chunks/app/global-error-8125a92a6e8c13c7.js"],"default"]
+:HL["/_next/static/media/e4af272ccee01ff0-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/09a2aa5c7e08060b.css","style"]
+0:{"P":null,"b":"AkPCqfZRosRagjw9GQN17","p":"","c":["","_not-found"],"i":false,"f":[[["",{"children":["/_not-found",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/09a2aa5c7e08060b.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"className":"__className_e8ce0c","children":["$","$L2",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","error":"$4","errorStyles":[],"errorScripts":[],"template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L6",null,{}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]}]]}],{"children":["/_not-found",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":[["$","$L7",null,{"Component":"$6","searchParams":{},"params":{},"promises":["$@8","$@9"]}],["$","$La",null,{"children":"$Lb"}],null,["$","$Lc",null,{"children":["$Ld","$Le",["$","$Lf",null,{"promise":"$@10"}]]}]]}],{},null,false]},null,false]},[["$","$L11","l",{"sx":{"display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center","minHeight":"100vh","gap":2},"children":[["$","$L12",null,{"size":60,"thickness":4}],["$","$L13",null,{"variant":"h6","color":"text.secondary","children":"Loading Jam..."}]]}],[],[]],false],["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$1","LaFshwjyjTd3CoMfkpmyS",{"children":[["$","$L14",null,{"children":"$L15"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$16",[]],"s":false,"S":true}
+17:"$Sreact.suspense"
+18:I[74911,[],"AsyncMetadata"]
+8:{}
+9:{}
+b:["$","$17",null,{"fallback":null,"children":["$","$L18",null,{"promise":"$@19"}]}]
+e:null
+15:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+d:null
+19:{"metadata":[["$","title","0",{"children":"Jam - Talent Marketplace"}],["$","meta","1",{"name":"description","content":"Redesigned upwork clone frontend - Connect with talented professionals"}],["$","meta","2",{"name":"author","content":"Jam Team"}],["$","meta","3",{"name":"keywords","content":"freelance,talent,marketplace,jobs,professionals"}]],"error":null,"digest":"$undefined"}
+10:{"metadata":"$19:metadata","error":null,"digest":"$undefined"}
